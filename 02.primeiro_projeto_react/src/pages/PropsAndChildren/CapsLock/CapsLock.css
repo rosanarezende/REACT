@@ -1,0 +1,7 @@
+.danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border: 5px solid #ebccd1;
+  padding: 10px;
+  text-align: center;
+}
