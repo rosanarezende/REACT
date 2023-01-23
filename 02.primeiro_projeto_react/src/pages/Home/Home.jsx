@@ -9,6 +9,14 @@ export default function Home() {
         <h2>Introduction</h2>
       </Link>
 
+      <Link to="/list-rendering">
+        <h2>List Rendering</h2>
+      </Link>
+
+      <Link to="/conditional-rendering">
+        <h2>Conditional Rendering</h2>
+      </Link>
+
       <Link to="/children">
         <h2>Children</h2>
       </Link>
@@ -27,10 +35,6 @@ export default function Home() {
 
       <Link to="/default-props">
         <h2>Default Props</h2>
-      </Link>
-
-      <Link to="/conditional-rendering">
-        <h2>Conditional Rendering</h2>
       </Link>
     </div>
   )
