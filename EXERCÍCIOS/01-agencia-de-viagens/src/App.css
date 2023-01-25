@@ -1,0 +1,20 @@
+.App{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.conteudo{
+  margin: 80px 10px 0;
+  text-align: center;
+  line-height: 0.75;
+  color: #5B4E53;
+}
+
+h2{
+  color: #c0a939
+}
+
+.subtitulo{
+  margin-bottom: 2em;
+}
