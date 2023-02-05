@@ -29,7 +29,7 @@ export function useTrips() {
           link: "https://www.google.com/"
         },
       ]);
-    }, 10000);
+    }, 2000);
   }, []);
 
   return tripsList;

@@ -11,6 +11,10 @@
   color: #5B4E53;
 }
 
+.conteudo ul {
+  display: flex;
+}
+
 h2{
   color: #c0a939
 }

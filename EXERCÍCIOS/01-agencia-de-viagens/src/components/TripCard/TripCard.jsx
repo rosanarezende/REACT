@@ -1,21 +1,12 @@
 import './TripCard.css'
 
-export default function TripCard() {
-  const trip = {
-    id: 1,
-    nome: "Viagem para o Japão",
-    descricao: 
-    "Loren ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel tincidunt lacinia, nunc est aliquam nisl, eu aliquam nunc nisl eu lectus. Sed euismod, nisl vel tincidunt lacinia, nunc est aliquam nisl, eu aliquam nunc nisl eu lectus.",
-    preco: 10000,
-    data: "10/02/2023",
-    duracao: 10,
-    imagem: "https://picsum.photos/200/300",
-    link: "https://www.google.com/"
-  }
-
+export default function TripCard({ trip }) {
+  
   return (
     <li className="trip-card">
-      <img src={trip.imagem} alt={trip.nome} />
+      <img src={trip.imagem} alt={trip.nome} style={
+        { width: "200px", height: "300px" }
+      } />
       <h3>{trip.nome}</h3>
       <p>{trip.descricao}</p>
       <p>
