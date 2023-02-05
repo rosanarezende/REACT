@@ -1,14 +1,15 @@
-export default function Sum({ numero1, numero2 }) {
+export default function MinhaSoma({ numero1, numero2, titulo }) {
   const resultado = numero1 + numero2
   
   return (
     <div>
-      Soma: {resultado}
+      {titulo}: {resultado}
     </div>
   )
 }
 
-Sum.defaultProps = {
+MinhaSoma.defaultProps = {
   numero1: 0,
-  numero2: 0
+  numero2: 0,
+  titulo: ''
 }

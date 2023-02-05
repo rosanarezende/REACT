@@ -9,10 +9,10 @@ export default function PropTypes() {
       <Sum num1={5} num2={10} />
  
       <h2>Enviar tipos incorretos</h2>
-      <Sum num1={5} num2="10" />
+      {/* <Sum num1={5} num2="10" /> */}
 
       <h2>Não enviar propriedade obrigatória</h2>
-      <Sum num1={5} />
+      <Sum />
     </div>
   )
 }

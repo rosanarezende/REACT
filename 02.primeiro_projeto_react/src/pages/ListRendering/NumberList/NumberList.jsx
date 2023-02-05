@@ -1,17 +1,19 @@
 export default function NumberList() {
-  const numbers = [1, 2, 3, 4, 5]
+  const listaDeNumeros = [{
+    id: "aaaa",
+    numero: 1
+  },
+  {
+    id: "bbbb",
+    numero: 2
+  }
+  ]
 
   return (
     <>
       <h2>Lista de Números</h2>
       <ul>
-        {numbers.map((number) => {
-          return (
-            <li key={number}>
-              {number}
-            </li>
-          )
-        })}
+        {listaDeNumeros.map(item => <li key={item.id} >{item.numero * 2}</li>)}
       </ul>
     </>
   )

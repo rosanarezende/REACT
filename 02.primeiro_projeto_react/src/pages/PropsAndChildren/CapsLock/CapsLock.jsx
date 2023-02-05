@@ -1,13 +1,13 @@
 import './CapsLock.css'
 
 export default function CapsLock({ children, titulo, danger }) {
-  const textoEmCapsLock = children.toUpperCase()
-
+  const textoEmCapsLock = children?.toUpperCase()
+  console.log({ titulo })
   return (
     <>
-      <h1>{titulo}</h1>
+      {titulo}
       <div className={danger ? 'danger' : ''}>
-        {textoEmCapsLock}
+        {children}
       </div>
     </>
   )

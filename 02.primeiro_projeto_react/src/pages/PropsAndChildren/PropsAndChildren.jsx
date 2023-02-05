@@ -7,13 +7,14 @@ export default function PropsAndChildren() {
       <h1>Props and Children</h1>
 
       <CapsLock titulo="Olá Mundo" danger>
-        FuturoDEV
+        Olá Mundo!!!!!
       </CapsLock>
       
-      <GiftCard titulo="Parabéns" danger>
+      {/* <GiftCard titulo="Parabéns" danger>
         <h3>Você é um cliente especial</h3>
         <p>Ganhou um bolo de chocolate</p>
-      </GiftCard>
+      </GiftCard> */}
+
     </div>
   )
 }
