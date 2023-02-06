@@ -10,6 +10,18 @@ export const useCounter = (initialValue = 0, countValue = 1) => {
   return { count, increment, decrement }
 }
 
+export const useInputSimple = (initialValue) => {
+  const [value, setValue] = useState(initialValue)
+
+  const onChange = (e) => setValue(e.target.value)
+
+  return { value, onChange }
+}
+
+// o hook useInput retorna um array com 3 posições
+// 1 - o valor do input
+// 2 - o bind do input (ou seja, o onChange e o value)
+// 3 - a função para resetar o valor do input
 export const useInput = (initialValue) => {
   const [value, setValue] = useState(initialValue)
 
