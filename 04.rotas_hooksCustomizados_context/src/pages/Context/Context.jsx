@@ -1,14 +1,21 @@
-import { useThemeContext } from "../../contexts/theme";
+import { TemaContext } from "../../contexts/tema";
 
 export default function Context() {
-  const { theme, setTheme } = useThemeContext();
-
   return (
-    <div className={`context-${theme}`}>
+    <div>
       <h1>Context</h1>
-      <p>Theme: {theme}</p>
-      <button onClick={() => setTheme("dark")}>Dark</button>
-      <button onClick={() => setTheme("light")}>Light</button>
+
+      <TemaContext.Consumer>
+        {({ tema, setTema }) => (
+          <div className={`tema-${tema}`}>
+            <p>{tema}</p>
+            <div>
+              <button onClick={() => setTema("preto")}>Preto</button>
+              <button onClick={() => setTema("branco")}>Branco</button>
+            </div>
+          </div>
+        )}
+      </TemaContext.Consumer>
     </div>
   );
 }

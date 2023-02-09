@@ -1,14 +1,19 @@
 import { useEffect } from "react"
 import { useState } from "react"
 
-export const useCounter = (initialValue = 0, countValue = 1) => {
-  const [count, setCount] = useState(initialValue)
+export const useContMari = (valorInicial = 100, valorIncrementado = 5, valorDecrementado = 5) => {
+  const [numero, setNumero] = useState(valorInicial);
 
-  const increment = () => setCount(count + countValue)
-  const decrement = () => setCount(count - countValue)
+  const incrementar = () => {
+    setNumero(numero + valorIncrementado);
+  };
 
-  return { count, increment, decrement }
-}
+  const decrementar = () => {
+    setNumero(numero - valorDecrementado);
+  };
+
+  return [numero, incrementar, decrementar];
+};
 
 export const useInputSimple = (initialValue) => {
   const [value, setValue] = useState(initialValue)

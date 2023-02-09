@@ -29,39 +29,82 @@ export function LoginForm() {
   );
 }
 
-// sem hooks customizados
-export function LoginForm2() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+const useForm = (initialState) => {
+  const [values, setValues] = useState(initialState);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(`Usuário: ${username} Senha: ${password}`);
-    setUsername("");
-    setPassword("");
+  const onChange = (e) => {
+    setValues({
+      ...values,
+      [e.target.name]: e.target.value,
+    });
   };
 
+    return [values, onChange];
+};
+  
+const useInputForm = (initialState) => {
+  const [value, setValue] = useState(initialState);
+
+  const onChange = (e) => {
+    setValue(e.target.value);
+  };
+
+  return [value, onChange];
+};
+
+
+// sem hooks customizados
+export function LoginForm2() {
+  // const [formulario, setFormulario] = useState({
+  //   usuario: "",
+  //   senha: ""
+  // })
+  const [formulario, setFormulario] = useForm({
+    usuario: "",
+    senha: ""
+  })
+
+  // const [usuario, setUsuario] = useState("")
+  // const [senha, setSenha] = useState("")
+  
+  const [usuario, setUsuario] = useInputForm("")
+  const [senha, setSenha] = useInputForm("")
+  
+  const enviarFormulario = (e) => {
+    e.preventDefault()
+
+    alert(`Olá ${formulario.usuario}, sua senha é ${formulario.senha}`)
+
+    setUsuario("")
+    setSenha("")
+  }
+  
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      onSubmit={enviarFormulario}
+    >
       <div>
         <label htmlFor="username">Usuário</label>
         <input
           id="username"
+          name="usuario"
           type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          value={formulario.usuario || ""}
+          onChange={setFormulario}
         />
       </div>
       <div>
         <label htmlFor="password">Senha</label>
         <input
           id="password"
+          name="senha"
           type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={formulario.senha || ""}
+          onChange={setFormulario}
         />
       </div>
       <button>Enviar</button>
     </form>
   );
 }
+

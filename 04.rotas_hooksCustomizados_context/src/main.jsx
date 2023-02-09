@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { ThemeProvider } from './contexts/theme'
+import { TemaProvider } from './contexts/tema'
 import './index.css'
 import MyRoutes from './routes'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ThemeProvider>
-      <MyRoutes />
-    </ThemeProvider>
-  </React.StrictMode>,
-)
+    <TemaProvider>
+        <MyRoutes />
+    </TemaProvider>
+  </React.StrictMode>
+);

@@ -5,6 +5,13 @@ export function WelcomeMessage({ name }) {
   return <p>{ name }, fique à vontade!</p>
 }
 
+
+
+
+
+
+
+
 export function WelcomeMessage2() {
   const { name } = useUserContext()
   return <p>{ name }, fique à vontade!</p>

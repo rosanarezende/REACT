@@ -11,12 +11,17 @@ export function WelcomeCard({ name }) {
   );
 }
 
+
+
+
+
+
 // PROP
-export function WelcomeCard2({ message }) {
+export function WelcomeCard2({ componenteDeFrase }) {
   return (
     <div className="welcome-card">
       <h3>^^ Boas Vindas ^^</h3>
-      {message}
+      {componenteDeFrase}
     </div>
   );
 }

@@ -20,11 +20,11 @@ export default function Composition() {
 
       {/* 1- Usar prop para passar o componente */}
       <WelcomeCard2
-        message={<WelcomeMessage name={name} />}
+        componenteDeFrase={<WelcomeMessage name={name} />}
       />
 
       {/* 2 - Usar children */}
-      <WelcomeCard3>
+      <WelcomeCard3 >
         <WelcomeMessage name={name} />
       </WelcomeCard3>
 

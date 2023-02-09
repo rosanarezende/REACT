@@ -23,6 +23,20 @@
   background-color: #1a1a1a
 }
 
+.tema-branco{
+  padding: 20px;
+  border: 2px solid black;
+  background-color: white;
+}
+
+.tema-preto{
+  padding: 20px;
+  border: 2px solid white;
+  background-color: black;
+  color: #fff;
+}
+
+
 a {
   font-weight: 500;
   color: #646cff;
