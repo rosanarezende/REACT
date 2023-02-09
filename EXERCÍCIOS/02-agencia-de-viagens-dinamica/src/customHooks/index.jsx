@@ -1,6 +1,18 @@
 import { useState } from "react"
 
-export const useInput = (initialValue) => {
+// HOOK CUSTOMIZADO DE INPUT SIMPLES
+export const useInput = (initialState = "") => {
+  const [value, setValue] = useState(initialState);
+
+  const onChange = (e) => {
+    setValue(e.target.value);
+  };
+
+  return [value, onChange];
+};
+
+// HOOK CUSTOMIZADO DE INPUT AVANÇADO
+export const useInputAdvanced = (initialValue = "") => {
   const [value, setValue] = useState(initialValue)
 
   const reset = () => setValue(initialValue)
@@ -12,6 +24,38 @@ export const useInput = (initialValue) => {
   return [value, bind, reset]
 }
 
+// HOOK CUSTOMIZADO DE FORMULÁRIO SIMPLES
+export const useForm = (initialFormValue) => {
+  const [formValue, setFormValue] = useState(initialFormValue);
+
+  const onChangeFormValue = (e) => {
+    setFormValue({
+      ...formValue,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  return [formValue, onChangeFormValue];
+}
+
+// HOOK CUSTOMIZADO DE FORMULÁRIO AVANÇADO
+export const useFormAdvanced = (initialFormValue) => {
+  const [formValue, setFormValue] = useState(initialFormValue)
+
+  const reset = () => setFormValue(initialFormValue)
+
+  const bind = {
+    formValue,
+    onChange: (e) => setFormValue({
+      ...formValue,
+      [e.target.name]: e.target.value,
+    }),
+  }
+
+  return [formValue, bind, reset]
+}
+
+// Hook para localStorage
 export const useLocalStorage = (key, initialValue) => {
   const [state, setState] = useState(() => {
     const localValue = window.localStorage.getItem(key)
