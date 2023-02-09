@@ -3,7 +3,7 @@ import { Layout } from "../components";
 import { Contact, Home, Login, NotFound, Register, Trip } from "../pages";
 
 // apenas para exemplificar hooks customizados
-import { Contact1, Contact2, Contact3, Contact4, Contact5 } from "../pages"
+import { Contact1, Contact2, Contact3, Contact4 } from "../pages"
 
 export default function Routes() {
   return (
@@ -21,7 +21,6 @@ export default function Routes() {
           <Route path="/contact2" element={<Contact2 />} />
           <Route path="/contact3" element={<Contact3 />} />
           <Route path="/contact4" element={<Contact4 />} />
-          <Route path="/contact5" element={<Contact5 />} />
 
           <Route path="/trip/:identifier" element={<Trip />} />
 

@@ -3,13 +3,14 @@ import {
   useInput,
   useInputAdvanced,
   useForm,
-  useFormAdvanced,
 } from "../../customHooks";
 
 // ESSE COMPONENTE É O CORRETO PARA A APLICAÇÃO - TEM OUTROS ABAIXO PARA FINS EXEMPLIFICATIVOS
 export function Contact() {
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      // onSubmit={handleSubmit}
+    >
       <h3>CADASTRE-SE</h3>
       <div>
         <label htmlFor="name">Nome</label>
@@ -212,7 +213,7 @@ export function Contact3() {
   );
 }
 
-// HOOK CUSTOMIZADO DE FORMULÁRIO SIMPLES - useForm
+// HOOK CUSTOMIZADO DE FORMULÁRIO - useForm
 export function Contact4() {
   const [formulario, alteraOValorDoInput] = useForm({
     nome: "",
@@ -231,7 +232,7 @@ export function Contact4() {
           value={formulario.nome}
           onChange={alteraOValorDoInput}
         />
-      </div>nome
+      </div>
       <div>
         <label htmlFor="passemailword">Email</label>
         <input
@@ -247,51 +248,3 @@ export function Contact4() {
   );
 }
 
-// HOOK CUSTOMIZADO DE FORMULÁRIO AVANÇADO - useFormAdvanced
-export function Contact5() {
-  const [form, bindForm, resetForm] = useFormAdvanced({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    alert(
-      `Nome: ${form.name} \nEmail: ${form.email} \nTelefone: ${form.phone} \nMensagem: ${form.message}`
-    );
-
-    resetForm();
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <h3>Formulário com useFormAdvanced</h3>
-      <div>
-        <label htmlFor="name">Nome</label>
-        <input id="name" type="text" {...bindForm} name="name" />
-      </div>
-      <div>
-        <label htmlFor="passemailword">Email</label>
-        <input
-          id="email"
-          type="email"
-          aria-label="email"
-          {...bindForm}
-          name="email"
-        />
-      </div>
-      <div>
-        <label htmlFor="phone">Telefone</label>
-        <input id="phone" type="tel" {...bindForm} name="phone" />
-      </div>
-      <div>
-        <label htmlFor="message">Mensagem</label>
-        <textarea id="message" {...bindForm} name="message" />
-      </div>
-      <button>Enviar</button>
-    </form>
-  );
-}
