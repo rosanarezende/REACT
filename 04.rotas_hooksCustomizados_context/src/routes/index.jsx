@@ -17,8 +17,8 @@ export default function MyRoutes() {
           <Route path="/composition" element={<Composition />} />
           <Route path="/context" element={<Context />} />
 
-          <Route path="/product" element={<DetailRoute />} />
-          <Route path="/product/:identifier" element={<Product />} />
+          <Route path="/products" element={<DetailRoute />} />
+          <Route path="/products/:identificador" element={<Product />} />
 
           <Route path="*" element={<h2>404 - Not Found</h2>} />
         </Routes>
