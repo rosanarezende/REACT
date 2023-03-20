@@ -8,21 +8,32 @@
   <title>Introdução ao React</title>
 </head>
 <body>
-  <div id="root-vanilla"></div>
-  <div id="root-react"></div>
-  <div id="root-babel"></div>
-  
-  <!-- REACT e REACTDOM: https://reactjs.org/docs/cdn-links.html -->
+  <main>
+    <div id="vanilla"></div>
+
+    <div id="react"></div>
+
+    <div id="react-com-babel"></div>
+  </main>
+
+
+  <!-- VANILLA -->
+  <script src="vanilla.js"></script>
+
+
+
+  <!-- REACT -->
+  <!-- importar REACT e REACTDOM: https://reactjs.org/docs/cdn-links.html -->
   <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="react.js"></script>
 
-  <!-- BABEL: https://babeljs.io/setup#installation -->
+
+  <!-- REACT + BABEL -->
+  <!-- importar BABEL: https://babeljs.io/setup#installation -->
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-  <!-- Exemplos: Olá Mundo! -->
-  <script src="ola-mundo.js"></script>
-
-  <!-- Exemplos: Babel -->
   <script type="text/babel" src="react-com-babel.js"></script>
+
+
 </body>
 </html>
