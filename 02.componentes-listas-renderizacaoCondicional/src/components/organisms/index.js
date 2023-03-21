@@ -1,9 +1,9 @@
-import ReaproveitamentoDeComponentes from "./ReaproveitamentoDeComponentes/ReaproveitamentoDeComponentes";
+import Componentes from "./Componentes/Componentes";
 import RenderizacaoDeListas from "./RenderizacaoDeListas/RenderizacaoDeListas";
 import RenderizacaoCondicional from "./RenderizacaoCondicional/RenderizacaoCondicional";
 
 export {
-  ReaproveitamentoDeComponentes,
+  Componentes,
   RenderizacaoDeListas,
   RenderizacaoCondicional,
 };

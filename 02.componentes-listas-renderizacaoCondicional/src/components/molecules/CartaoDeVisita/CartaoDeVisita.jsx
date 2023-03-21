@@ -1,3 +1,5 @@
+import './CartaoDeVisita.css'
+
 export default function CartaoDeVisita() {
   return (
     <div className="cartao-de-visita">

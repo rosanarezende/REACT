@@ -1,10 +1,10 @@
 import { Botao, Paragrafo } from '../../atoms'
 import { CartaoDeVisita } from '../../molecules'
 
-export default function ReaproveitamentoDeComponentes() {
+export default function Componentes() {
   return (
     <section>
-      <h2>Reaproveitamento de componentes</h2>
+      <h2>Criação e Retilização de componentes</h2>
       <Paragrafo />
       <Botao />
 
