@@ -1,6 +1,6 @@
 import { Cabecalho } from "./components/molecules";
 import {
-  Componentes,
+  RenderizacaoDeComponentes,
   RenderizacaoCondicional,
   RenderizacaoDeListas,
 } from "./components/organisms";
@@ -11,7 +11,7 @@ export default function App() {
       <Cabecalho />
 
       <main>
-        <Componentes />
+        <RenderizacaoDeComponentes />
         <RenderizacaoDeListas />
         <RenderizacaoCondicional />
       </main>
