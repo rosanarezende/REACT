@@ -1,0 +1,15 @@
+.cartao-de-visita {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 1.5em;
+  border: 1px solid #646cff;
+  width: 40%;
+  padding: 1em;
+}
+
+.cartao-de-visita img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
