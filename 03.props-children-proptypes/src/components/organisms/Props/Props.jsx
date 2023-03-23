@@ -1,4 +1,4 @@
-import { Botao } from "../../atoms";
+import { Imagem } from "../../atoms";
 import { CartaoDeVisita, Doce, Doce2 } from "../../molecules";
 
 export default function Props() {
@@ -12,8 +12,17 @@ export default function Props() {
     <section>
       <h2>Props</h2>
 
-      <Botao texto="Clique aqui" />
-      <Botao texto="Clique aqui 2" danger />
+      <Imagem
+        imagemUrl="https://s1.static.brasilescola.uol.com.br/be/2022/06/paisagem-natural-floresta.jpg"
+        textoAlternativo="Foto de uma floresta"
+        formato="quadrado"
+      />
+
+      <Imagem
+        imagemUrl="https://caosplanejado.com/wp-content/uploads/2021/02/cidade-centrada.jpg"
+        textoAlternativo="Foto de uma cidade"
+        formato="redondo"
+      />
 
       <h3>Exercício 1</h3>
       <p>
@@ -33,19 +42,25 @@ export default function Props() {
       />
 
       <h2>Props + renderização de listas</h2>
-      {listaDeDoces.map((doce) => (
-        <Doce
-          key={doce.id}
-          nome={doce.nome}
-          preco={doce.preco}
-          descricao={doce.descricao}
-        /> // ou <Doce key={doce.id} {...doce} />
-      ))}
+
+      <div className="lista-de-doces">
+        {listaDeDoces.map((doce) => (
+          <Doce
+            key={doce.id}
+            nome={doce.nome}
+            preco={doce.preco}
+            descricao={doce.descricao}
+          /> // ou <Doce key={doce.id} {...doce} />
+        ))}
+      </div>
 
       <p>Podemos utilizar também a desestruturação</p>
-      {listaDeDoces.map((doce) => (
-        <Doce2 key={doce.id} doce={doce} />
-      ))}
+      <div className="lista-de-doces">
+        {listaDeDoces.map((doce) => (
+          <Doce2 key={doce.id} doce={doce} />
+        ))}
+      </div>
+
 
       <h3>Exercício 2</h3>
       <p>

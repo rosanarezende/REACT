@@ -1,8 +1,8 @@
-button .default {
+button.default {
   background-color: #4CAF50;
   color: white;
 }
 
-button .danger {
+button.danger {
   background-color: #f44336;
 }

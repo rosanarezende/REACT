@@ -1,3 +1,5 @@
+import './Doce.css'
+
 export default function Doce({ nome, preco, descricao }) {
   return (
     <div className="doce">

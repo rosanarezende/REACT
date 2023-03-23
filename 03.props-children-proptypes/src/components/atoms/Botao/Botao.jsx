@@ -1,4 +1,6 @@
-export default function Botao({ texto, danger }) {
+import './Botao.css';
+
+export default function Botao({ danger, children }) {
 
   function clicaNoBotao() {
     alert("Clicou no botão!");
@@ -6,7 +8,7 @@ export default function Botao({ texto, danger }) {
 
   return (
     <button onClick={clicaNoBotao} className={danger ? "danger" : "default"}>
-      {texto}
+      {children}
     </button>
   );
 }

@@ -1,0 +1,13 @@
+.doce {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  color: #333;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 20px;
+  padding: 4px 12px;
+  text-shadow: 0 1px 0 #fff;
+}

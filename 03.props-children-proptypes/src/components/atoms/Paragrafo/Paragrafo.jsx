@@ -1,4 +1,6 @@
-export default function Paragrafo({ texto }) {
+import './Paragrafo.css';
 
-  return <p>{texto}</p>;
+export default function Paragrafo({ children }) {
+
+  return <p>{children}</p>;
 }

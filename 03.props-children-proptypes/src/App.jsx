@@ -1,5 +1,5 @@
 import { Cabecalho } from './components/molecules'
-import { Props, Children, PropTypes, ValoresPadrao } from './components/organisms'
+import { Props, Children, PropTypes, ValoresPadrao, PropsChildren } from './components/organisms'
 
 export default function App() {
 
@@ -10,8 +10,9 @@ export default function App() {
       <main>
         <Props />
         <Children />
-        <PropTypes />
+        <PropsChildren />
         <ValoresPadrao />
+        <PropTypes />
       </main>
     </>
   )
