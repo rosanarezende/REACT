@@ -5,13 +5,13 @@ export default function App() {
 
   return (
     <>
-      {/* <Cabecalho /> */}
+      <Cabecalho />
 
       <main>
-        {/* <Props />
+        <Props />
         <Children />
         <PropsChildren />
-        <ValoresPadrao /> */}
+        <ValoresPadrao />
         <PropTypes />
       </main>
     </>

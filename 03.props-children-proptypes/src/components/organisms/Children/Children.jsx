@@ -1,10 +1,10 @@
-import { Paragrafo } from "../../atoms";
+import { Paragrafo, Texto } from "../../atoms";
 import { CartaoDePresente } from "../../molecules";
 
 export default function Children() {
   return (
     <section>
-      <h2>Children</h2>
+      <Texto subtitulo="Children" />
       <Paragrafo>Texto do parágrafo 1 😄</Paragrafo>
 
       <Paragrafo>

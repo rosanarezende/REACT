@@ -3,12 +3,12 @@ import { Botao, Paragrafo, Texto } from "../../atoms";
 export default function PropsChildren() {
   return (
     <section>
-      <h2>Props + Children</h2>
+      <Texto subtitulo="Props + Children" />
 
       <Botao>Clique aqui</Botao>
       <Botao danger>Clique aqui</Botao>
 
-      <h3>Exerício</h3>
+      <Texto textoH3="Exerício" />
       <p>
         Crie um componente <strong>Texto</strong> que receba children, mas que também
         receba propriedades titulo, subtitulo e cores (por exemplo cor, corTitulo, corSubtitulo).

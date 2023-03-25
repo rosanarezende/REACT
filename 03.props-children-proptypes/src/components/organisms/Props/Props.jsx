@@ -1,4 +1,4 @@
-import { Imagem } from "../../atoms";
+import { Imagem, Texto } from "../../atoms";
 import { CartaoDeVisita, Doce, Doce2, Produto, Soma } from "../../molecules";
 
 export default function Props() {
@@ -13,25 +13,28 @@ export default function Props() {
       id: 1,
       nome: "Shampoo",
       preco: 20,
-      imagem: "https://img.freepik.com/psd-premium/maqueta-salpicadura-publicidad-botella-blanca_181945-770.jpg"
+      imagem:
+        "https://img.freepik.com/psd-premium/maqueta-salpicadura-publicidad-botella-blanca_181945-770.jpg",
     },
     {
       id: 2,
       nome: "Condicionador",
       preco: 25,
-      imagem: "https://img.freepik.com/premium-psd/bottle-with-pump-splashing-advertising-mockup_181945-895.jpg"
+      imagem:
+        "https://img.freepik.com/premium-psd/bottle-with-pump-splashing-advertising-mockup_181945-895.jpg",
     },
     {
       id: 3,
       nome: "Creme para pentear",
       preco: 30,
-      imagem: "https://img.freepik.com/free-psd/white-plastic-soap-container_176382-1383.jpg?w=2000"
+      imagem:
+        "https://img.freepik.com/free-psd/white-plastic-soap-container_176382-1383.jpg?w=2000",
     },
-  ]
+  ];
 
   return (
     <section>
-      <h2>Props</h2>
+      <Texto subtitulo="Props" />
 
       <Imagem
         imagemUrl="https://s1.static.brasilescola.uol.com.br/be/2022/06/paisagem-natural-floresta.jpg"
@@ -45,7 +48,7 @@ export default function Props() {
         formato="redondo"
       />
 
-      <h3>Exercício 1</h3>
+      <Texto textoH3="Exercício 1" />
       <p>
         Crie um componente <strong>CartaoDeVisita</strong> que receba as props
         nome, email, telefone e imageUrl e exiba os dados em um cartão de
@@ -66,15 +69,16 @@ export default function Props() {
         />
       </div>
 
-      <h3>Exercício 3</h3>
+      <Texto textoH3="Exercício 2" />
       <p>
-      Crie um componente de soma que recebe duas propriedades (números), e que retorna uma frase: “A soma dos números é __”
+        Crie um componente de soma que recebe duas propriedades (números), e que
+        retorna uma frase: “A soma dos números é __”
       </p>
 
       <Soma num1={2} num2={3} />
       <Soma num1={5} num2={-10} />
 
-      <h2>Props + renderização de listas</h2>
+      <Texto subtitulo="Props + renderização de listas" />
 
       <div className="wrapper">
         {listaDeDoces.map((doce) => (
@@ -99,11 +103,12 @@ export default function Props() {
         ))}
       </div>
 
-      <h3>Exercício 3</h3>
+      <Texto textoH3="Exercício" />
       <p>
-        Crie um componente <strong>Produto</strong> que recebe como propriedades seu nome, preço e imagem.
-        Crie uma lista de produtos com essas informações e outras que achar necessário.
-        Renderize a lista de produtos utilizando o componente <strong>Produto</strong>.
+        Crie um componente <strong>Produto</strong> que recebe como propriedades
+        seu nome, preço e imagem. Crie uma lista de produtos com essas
+        informações e outras que achar necessário. Renderize a lista de produtos
+        utilizando o componente <strong>Produto</strong>.
       </p>
 
       <div className="wrapper">
