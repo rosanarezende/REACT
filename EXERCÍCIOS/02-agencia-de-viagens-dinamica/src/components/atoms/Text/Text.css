@@ -1,0 +1,41 @@
+.texto h1 {
+  font-size: 2.4em;
+  line-height: 1.1;
+  margin: 1.5em 0 0.4em;
+  color: #c0a939;
+}
+
+.texto h2 {
+  font-size: 1.8em;
+  line-height: 1.5;
+  border-bottom: 1px solid #5B4E53;
+  padding-bottom: 0.1em;
+  margin-bottom: 1em;
+}
+
+.texto h3 {
+  font-size: 1.6em;
+  line-height: 1.1;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+
+.texto h4 {
+  font-size: 1.4em;
+  line-height: 1.1;
+  margin-bottom: 0.5em;
+}
+
+.texto h5 {
+  font-size: 1.2em;
+  line-height: 1.1;
+  margin: 0.8em 0;
+  text-transform: uppercase;
+}
+
+.texto p {
+  font-size: 1em;
+  line-height: 1.4;
+  margin: 0 0 0.6em;
+}
+
