@@ -1,3 +1,4 @@
+import "./Cabecalho.css";
 import logo from '../../../assets/react-logo.png';
 
 export default function Cabecalho() {

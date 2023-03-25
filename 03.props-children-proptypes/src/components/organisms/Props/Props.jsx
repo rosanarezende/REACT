@@ -1,5 +1,5 @@
 import { Imagem } from "../../atoms";
-import { CartaoDeVisita, Doce, Doce2 } from "../../molecules";
+import { CartaoDeVisita, Doce, Doce2, Produto, Soma } from "../../molecules";
 
 export default function Props() {
   const listaDeDoces = [
@@ -7,6 +7,27 @@ export default function Props() {
     { id: 2, nome: "Bala", preco: 1, descricao: "Bala de goma" },
     { id: 3, nome: "Biscoito", preco: 2, descricao: "Biscoito de chocolate" },
   ];
+
+  const produtosDeBeleza = [
+    {
+      id: 1,
+      nome: "Shampoo",
+      preco: 20,
+      imagem: "https://img.freepik.com/psd-premium/maqueta-salpicadura-publicidad-botella-blanca_181945-770.jpg"
+    },
+    {
+      id: 2,
+      nome: "Condicionador",
+      preco: 25,
+      imagem: "https://img.freepik.com/premium-psd/bottle-with-pump-splashing-advertising-mockup_181945-895.jpg"
+    },
+    {
+      id: 3,
+      nome: "Creme para pentear",
+      preco: 30,
+      imagem: "https://img.freepik.com/free-psd/white-plastic-soap-container_176382-1383.jpg?w=2000"
+    },
+  ]
 
   return (
     <section>
@@ -26,31 +47,48 @@ export default function Props() {
 
       <h3>Exercício 1</h3>
       <p>
-        Crie um componente <strong>CartaoDeVisita</strong> que receba as props nome, email, telefone e imageUrl e exiba os dados em um cartão de visita.
+        Crie um componente <strong>CartaoDeVisita</strong> que receba as props
+        nome, email, telefone e imageUrl e exiba os dados em um cartão de
+        visita.
       </p>
 
-      <CartaoDeVisita
-        nome="João"
-        email="joao@email.com"
-        telefone="(11) 99999-9999"
-        imageUrl="https://cdn-blog.sallve.com.br/2022/05/a642d825-acne-no-homem-adulto-724x1024.jpg"
-      />
-      <CartaoDeVisita
-        nome="Maria"
-        email="maria@email.com"
-        telefone="(11) 99999-9999"
-      />
+      <div className="wrapper">
+        <CartaoDeVisita
+          nome="João"
+          email="joao@email.com"
+          telefone="(11) 99999-9999"
+          imageUrl="https://cdn-blog.sallve.com.br/2022/05/a642d825-acne-no-homem-adulto-724x1024.jpg"
+        />
+        <CartaoDeVisita
+          nome="Maria"
+          email="maria@email.com"
+          telefone="(11) 99999-9999"
+        />
+      </div>
+
+      <h3>Exercício 3</h3>
+      <p>
+      Crie um componente de soma que recebe duas propriedades (números), e que retorna uma frase: “A soma dos números é __”
+      </p>
+
+      <Soma num1={2} num2={3} />
+      <Soma num1={5} num2={-10} />
 
       <h2>Props + renderização de listas</h2>
 
-      <div className="lista-de-doces">
+      <div className="wrapper">
         {listaDeDoces.map((doce) => (
           <Doce
             key={doce.id}
             nome={doce.nome}
             preco={doce.preco}
             descricao={doce.descricao}
-          /> // ou <Doce key={doce.id} {...doce} />
+          />
+          // ou
+          // <Doce
+          //   key={doce.id}
+          //   {...doce} // está usando spread operator para passar todas as propriedades do objeto
+          // />
         ))}
       </div>
 
@@ -61,12 +99,18 @@ export default function Props() {
         ))}
       </div>
 
-
-      <h3>Exercício 2</h3>
+      <h3>Exercício 3</h3>
       <p>
-        x
+        Crie um componente <strong>Produto</strong> que recebe como propriedades seu nome, preço e imagem.
+        Crie uma lista de produtos com essas informações e outras que achar necessário.
+        Renderize a lista de produtos utilizando o componente <strong>Produto</strong>.
       </p>
 
+      <div className="wrapper">
+        {produtosDeBeleza.map((produto) => (
+          <Produto key={produto.id} {...produto} />
+        ))}
+      </div>
     </section>
   );
 }

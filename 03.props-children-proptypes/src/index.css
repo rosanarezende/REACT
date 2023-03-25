@@ -29,44 +29,8 @@ body {
   min-height: 100vh;
 }
 
-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1.5em;
-  background-color: #646cff;
-  width: 100vw;
-}
-
-header img {
-  width: 100%;
-  max-width: 100px;
-  padding-right: 2em;
-  padding-left: 3.5em;
-}
-
-h1 {
-  font-size: 3em;
-  line-height: 1.1;
-  color: #ffffff;
-}
-
 main {
   padding: 0 3.5em;
-}
-
-h2 {
-  font-size: 2.4em;
-  line-height: 1.1;
-  margin: 1.5em 0 0.5em;
-  border-bottom: 1px solid #646cff;
-}
-
-h3 {
-  font-size: 1.8em;
-  line-height: 1.1;
-  margin-bottom: 0.5em;
-  color: #646cff;
-  text-transform: uppercase;
 }
 
 button {
@@ -103,7 +67,15 @@ td {
   text-align: center;
 }
 
-.lista-de-doces {
+section {
+  margin: 1.5em 0;
+}
+
+pre {
+  margin: 0;
+}
+
+.wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;

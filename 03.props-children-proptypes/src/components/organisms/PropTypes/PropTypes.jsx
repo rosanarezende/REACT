@@ -1,10 +1,15 @@
+import { Texto } from "../../atoms";
+
 export default function PropTypes() {
   return (
     <section>
-      <h2>PropTypes</h2>
+      <Texto subtitulo="PropTypes" />
 
 
-      <h3>Exercício</h3>
+      <Texto textoH3="Exercício" />
+      <Texto>
+        xxx
+      </Texto>
     </section>
   )
 }

@@ -1,9 +1,12 @@
-import './CartaoDeVisita.css'
+import "./CartaoDeVisita.css";
 
 export default function CartaoDeVisita({ imageUrl, nome, email, telefone }) {
   return (
     <div className="cartao-de-visita">
-      <img src={imageUrl || "https://via.placeholder.com/150"} alt="Foto" />
+      <img
+        src={imageUrl}
+        alt={`Foto de ${nome}`}
+      />
       <div>
         <h3>{nome}</h3>
         <p>
@@ -18,3 +21,7 @@ export default function CartaoDeVisita({ imageUrl, nome, email, telefone }) {
     </div>
   );
 }
+
+CartaoDeVisita.defaultProps = {
+  imageUrl: "https://via.placeholder.com/150",
+};
