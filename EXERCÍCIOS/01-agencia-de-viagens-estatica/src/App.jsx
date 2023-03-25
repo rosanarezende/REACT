@@ -13,7 +13,7 @@ function App() {
           Escolha uma viagem e embarque nessa com a gente
         </Text>
 
-        <TripRegistration />
+        {/* <TripRegistration /> */}
 
         <TripList />
       </main>

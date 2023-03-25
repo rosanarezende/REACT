@@ -1,10 +1,13 @@
-import './Button.css';
+import "./Button.css";
 
-export default function Button({ danger, children }) {
+export default function Button({ children, danger, primary, secondary }) {
+  const style = danger
+    ? "danger"
+    : primary
+    ? "primary"
+    : secondary
+    ? "secondary"
+    : "";
 
-  return (
-    <button className={danger ? "danger" : "default"}>
-      {children}
-    </button>
-  );
+  return <button className={`button ${style}`}>{children}</button>;
 }

@@ -29,7 +29,7 @@ export default function TripRegistration() {
           <FormField label="Link de detalhes" type="text" name="link" />
         </div>
 
-        <Button type="submit">Cadastrar</Button>
+        <Button primary type="submit">Cadastrar</Button>
       </form>
     </section>
   );

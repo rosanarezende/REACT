@@ -1,9 +1,13 @@
+.trip-registration {
+  margin: 1.5em 0;
+}
+
 .trip-registration form {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
-  padding: 2em 0;
+  padding: 0.5em 0;
   margin-bottom: 1em;
 }
 

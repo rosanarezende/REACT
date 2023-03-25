@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Text } from "../../atoms";
 import "./TripCard.css";
 
 export default function TripCard({ trip }) {
@@ -10,17 +11,18 @@ export default function TripCard({ trip }) {
         src={imagem}
         alt={nome}
       />
-      <h3>{nome}</h3>
-      <p>{descricao}</p>
-      <p>
-        <strong>Preço:</strong> R$ {preco}
-      </p>
-      <p>
-        <strong>Data:</strong> {data}
-      </p>
-      <p>
+      <Text textoH3={nome} />
+      <Text>{descricao}</Text>
+      <Text>
+        {/* tranformar preço em real */}
+        <strong>Preço: </strong> R$  {preco}
+      </Text>
+      <Text>
+        <strong>Data: </strong> {data}
+      </Text>
+      <Text>
         <strong>Duração:</strong> {duracao} dias
-      </p>
+      </Text>
       <a href={link}>Ver mais</a>
     </li>
   );
