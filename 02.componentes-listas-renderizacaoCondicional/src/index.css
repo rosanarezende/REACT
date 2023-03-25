@@ -79,6 +79,7 @@ button {
   background-color: #646cff;
   cursor: pointer;
   transition: border-color 0.25s;
+  margin: 0 0.5em;
 }
 
 table {
@@ -100,4 +101,8 @@ th {
 td {
   padding: 0.5em;
   text-align: center;
+}
+
+section {
+  margin-top: 1.5em;
 }
