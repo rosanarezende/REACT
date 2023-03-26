@@ -1,25 +1,23 @@
-import { Text } from "./components/atoms";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Footer, Header } from "./components/molecules";
-import { TripList, TripRegistration } from "./components/organisms";
+import { Home, NotFound, Register } from "./components/pages";
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Header />
 
-      <main>
-        <Text titulo="Bora viajar por aí?" />
-        <Text>
-          Escolha uma viagem e embarque nessa com a gente
-        </Text>
+      <Routes>
+        <Route path="/home" element={<Navigate replace to="/" />} />
+        <Route path="/" element={<Home />} />
 
-        <TripRegistration />
+        <Route path="/cadastro" element={<Register />} />
 
-        <TripList />
-      </main>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
 
       <Footer />
-    </>
+    </BrowserRouter>
   );
 }
 

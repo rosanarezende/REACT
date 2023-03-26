@@ -1,0 +1,10 @@
+.filters {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.filters .fields {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

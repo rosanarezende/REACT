@@ -1,7 +1,7 @@
 import "./FormField.css";
 
-export default function FormField({ id, label, type, name, value, onChange, textArea }) {
-  const Tag = textArea ? "textarea" : "input";
+export default function FormField({ id, label, type, name, value, onChange, textArea, select }) {
+  const Tag = textArea ? "textarea" : select ? "select" : "input";
   const checked = type === "checkbox" ? !!value : undefined;
 
   return (
@@ -14,7 +14,18 @@ export default function FormField({ id, label, type, name, value, onChange, text
         value={value}
         onChange={onChange}
         checked={checked}
-      />
+      >
+        {select &&
+          <>
+            <option value="">Todos</option>
+            {select.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </>
+        }
+      </Tag>
     </div>
   );
 }

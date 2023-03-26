@@ -55,14 +55,14 @@ export default function TripCard({ trip }) {
 
 TripCard.propTypes = {
   trip: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    date: PropTypes.string.isRequired,
-    duration: PropTypes.number.isRequired,
-    country: PropTypes.string.isRequired,
-    available: PropTypes.bool.isRequired,
+    name: PropTypes.string,
+    description: PropTypes.string,
+    price: PropTypes.number,
+    date: PropTypes.string,
+    duration: PropTypes.number,
+    country: PropTypes.string,
+    available: PropTypes.bool,
     image: PropTypes.string,
-    link: PropTypes.string.isRequired,
+    link: PropTypes.string,
   }).isRequired,
 };

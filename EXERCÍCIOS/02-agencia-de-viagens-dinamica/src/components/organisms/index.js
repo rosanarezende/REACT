@@ -1,4 +1,5 @@
 import TripList from "./TripList/TripList";
-import TripRegistration from "./TripRegistration/TripRegistration";
+import TripForm from "./TripForm/TripForm";
+import Filters from "./Filters/Filters";
 
-export { TripList, TripRegistration };
+export { TripList, TripForm, Filters };

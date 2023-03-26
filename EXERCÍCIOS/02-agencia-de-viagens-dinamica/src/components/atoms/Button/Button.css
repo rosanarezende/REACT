@@ -30,9 +30,16 @@
 }
 
 .button.primary {
-  background-color: #2196f3;
+  background-color: #c0a939;
 }
 .button.primary:hover {
+  background-color: #a68f2e;
+}
+
+.button.success {
+  background-color: #2196f3;
+}
+.button.success:hover {
   background-color: #0d6efd;
 }
 

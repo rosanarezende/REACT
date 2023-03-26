@@ -1,6 +1,7 @@
 header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   position: fixed;
   top: 0;
@@ -11,9 +12,15 @@ header {
   width: 100%;
 
   background-color: #5b4e53;
-  padding: 5px 20px;
+  padding: 5px 0;
 }
 
 header img {
   height: 80px;
+  margin-left: 50px;
+  cursor: pointer;
+}
+
+header nav {
+  margin-right: 50px;
 }

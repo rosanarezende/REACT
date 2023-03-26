@@ -26,8 +26,16 @@
   border-radius: 4px;
 }
 
+.form-field select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 15vw;
+}
+
 .form-field input:focus,
-.form-field textarea:focus {
+.form-field textarea:focus,
+.form-field select:focus {
   outline: none;
   border: 1px solid #000;
 }
@@ -42,7 +50,8 @@
 }
 
 .form-field input[type="number"],
-.form-field input[type="date"] {
+.form-field input[type="date"] 
+{
   width: 13vw;
 }
 
