@@ -3,7 +3,7 @@ import './Botao.css';
 export default function Botao({ danger, children }) {
 
   return (
-    <button className={danger ? "danger" : "default"}>
+    <button className={`botao ${danger ? "danger" : "default"}`}>
       {children}
     </button>
   );

@@ -1,14 +1,16 @@
 img.imagem {
-  width: 150px;
   height: 150px;
+  width: auto;
   margin: 20px;
 }
 
 img.quadrado {
+  width: 150px;
   border: 2px solid green;
 }
 
 img.redondo {
+  width: 150px;
   border-radius: 50%;
   border: 2px solid blue;
 }

@@ -29,3 +29,8 @@ export default function Texto({
     </div>
   );
 }
+
+Texto.defaultProps = {
+  corTitulo: "#ffffff",
+  corH3: "#646cff",
+};

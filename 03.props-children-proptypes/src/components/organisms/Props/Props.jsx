@@ -1,4 +1,4 @@
-import { Imagem, Texto } from "../../atoms";
+import { Imagem, Imagem2, Texto } from "../../atoms";
 import { CartaoDeVisita, Doce, Doce2, Produto, Soma } from "../../molecules";
 
 export default function Props() {
@@ -35,6 +35,10 @@ export default function Props() {
   return (
     <section>
       <Texto subtitulo="Props" />
+      <Texto>
+        Para tornar um componente reutilizável, precisamos passar dados para ele.
+        Esses dados são chamados de props.
+      </Texto>
 
       <Imagem
         imagemUrl="https://s1.static.brasilescola.uol.com.br/be/2022/06/paisagem-natural-floresta.jpg"
@@ -46,6 +50,18 @@ export default function Props() {
         imagemUrl="https://caosplanejado.com/wp-content/uploads/2021/02/cidade-centrada.jpg"
         textoAlternativo="Foto de uma cidade"
         formato="redondo"
+      />
+
+      <Imagem
+        imagemUrl="https://img.freepik.com/fotos-gratis/praia-tropical_74190-188.jpg"
+        textoAlternativo="Foto de uma praia"
+      />
+
+      <Texto textoH6="OBS: Componentes escritos com classe não tem diferença no resultado final" />
+      <Imagem2
+        imagemUrl="https://s1.static.brasilescola.uol.com.br/be/2022/06/paisagem-natural-floresta.jpg"
+        textoAlternativo="Foto de uma floresta"
+        formato="quadrado"
       />
 
       <Texto textoH3="Exercício 1" />
@@ -78,6 +94,7 @@ export default function Props() {
       <Soma num1={2} num2={3} />
       <Soma num1={5} num2={-10} />
 
+      <br />
       <Texto subtitulo="Props + renderização de listas" />
 
       <div className="wrapper">
@@ -97,7 +114,7 @@ export default function Props() {
       </div>
 
       <p>Podemos utilizar também a desestruturação</p>
-      <div className="lista-de-doces">
+      <div className="wrapper">
         {listaDeDoces.map((doce) => (
           <Doce2 key={doce.id} doce={doce} />
         ))}
