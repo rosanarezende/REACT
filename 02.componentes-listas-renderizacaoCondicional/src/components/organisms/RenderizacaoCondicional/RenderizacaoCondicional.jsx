@@ -1,10 +1,10 @@
-import { CriancaFeliz, CriancaTriste } from "../../atoms";
+import { CriancaFeliz, CriancaTriste } from "../../molecules";
 
 export default function RenderizacaoCondicional() {
   const listaDeDoces = [
-    { id: 1, nome: "Chocolate" },
-    { id: 2, nome: "Bala" },
-    { id: 3, nome: "Biscoito" },
+    // { id: 1, nome: "Chocolate" },
+    // { id: 2, nome: "Bala" },
+    // { id: 3, nome: "Biscoito" },
   ];
 
   const felicidade = true;

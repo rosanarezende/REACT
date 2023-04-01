@@ -1,0 +1,20 @@
+.tabela-de-cidades {
+  border-collapse: collapse;
+  border: 1px solid #646cff;
+  width: 60%;
+  margin-bottom: 1.5em;
+  margin: auto;
+}
+
+.tabela-de-cidades th {
+  font-weight: 500;
+  text-align: center;
+  padding: 0.5em;
+  background-color: #646cff;
+  color: #ffffff;
+}
+
+.tabela-de-cidades td {
+  padding: 0.5em;
+  text-align: center;
+}

@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -24,34 +28,20 @@ a:hover {
 
 body {
   margin: 0;
+  padding: 0;
   display: flex;
   min-width: 320px;
   min-height: 100vh;
 }
 
-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1.5em;
-  background-color: #646cff;
-  width: 100vw;
+main {
   padding: 0 3.5em;
-}
-
-header img {
-  width: 100%;
-  max-width: 100px;
-  padding-right: 2em;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
   color: #ffffff;
-}
-
-main {
-  padding: 0 3.5em;
 }
 
 h2 {
@@ -69,38 +59,23 @@ h3 {
   text-transform: uppercase;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #646cff;
-  cursor: pointer;
-  transition: border-color 0.25s;
-  margin: 0 0.5em;
-}
-
-table {
-  border-collapse: collapse;
-  border: 1px solid #646cff;
-  width: 60%;
-  margin-bottom: 1.5em;
-  margin: auto;
-}
-
-th {
-  font-weight: 500;
-  text-align: center;
-  padding: 0.5em;
-  background-color: #646cff;
+h4 {
+  font-size: 1.6em;
+  line-height: 1.1;
+  margin-bottom: 0.5em;
+  background-color: #9a9fff;
   color: #ffffff;
+  width: fit-content;
+  padding: 0.2em 0.4em;
 }
 
-td {
-  padding: 0.5em;
-  text-align: center;
+code {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  font-size: 0.9em;
+  background-color: #e6e9ec;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
 }
 
 section {
