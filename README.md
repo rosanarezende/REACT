@@ -13,6 +13,14 @@ Conteúdos ministrados em aulas de React
 - Props
 - PropTypes
 
+- Eventos
+- Introdução à Hooks
+- Hooks Principais (useState, useRef, useEffect)
+- LifeCycle
+- Efeito Colateral
+- Formulários
+
+
 - Hooks Customizadas
 - Composição e Prop Drilling
 - Estado Global com ContextAPI
