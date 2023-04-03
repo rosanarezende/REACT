@@ -63,7 +63,7 @@ export default function TextField({
             className="textfield__legend"
             style={{ display: !!select || hasLabel ? "block" : "none" }}
           >
-            <span>{label}</span>
+            {label && <span>{label}</span>}
           </legend>
         </fieldset>
       </div>
