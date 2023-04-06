@@ -6,6 +6,11 @@ import {
   FormExample,
   FormExample1,
   FormExample2,
+  Counter,
+  Counter1,
+  Counter2,
+  Counter3, 
+  Counter4,
 } from "./examples";
 
 export default function CustomHooks() {
@@ -13,7 +18,7 @@ export default function CustomHooks() {
     <section>
       <Text subtitle="Custom Hooks" />
 
-      <FormExample />
+      <Counter4 />
     </section>
   );
 }
