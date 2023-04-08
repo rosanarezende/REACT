@@ -18,14 +18,14 @@ export const FormExample = () => {
   };
 
   return (
-    <>
+    <section>
       <h3>Form sem custom hook</h3>
       <form onSubmit={handleSubmit}>
         <input type="text"  value={form.name} onChange={(event) => setForm({ ...form, name: event.target.value })} />
         <input type="email" value={form.email} onChange={(event) => setForm({ ...form, email: event.target.value })} />
         <button type="submit">Enviar</button>
       </form>
-    </>
+    </section>
   );
 };
 
@@ -44,14 +44,14 @@ export const FormExample1 = () => {
   };
 
   return (
-    <>
+    <section>
       <h3>Form com custom hook</h3>
       <form onSubmit={handleSubmit}>
         <input type="text" name="name" value={form.name} onChange={onChange} />
         <input type="email" name="email" value={form.email} onChange={onChange} />
         <button type="submit">Enviar</button>
       </form>
-    </>
+    </section>
   );
 }
 
@@ -73,7 +73,7 @@ export const FormExample2 = () => {
   };
 
   return (
-    <>
+    <section>
       <h3>Form com custom hook + maps</h3>
       <form onSubmit={handleSubmit}>
         {inputs.map((input) => {
@@ -82,7 +82,7 @@ export const FormExample2 = () => {
         })}
         <button type="submit">Enviar</button>
       </form>
-    </>
+    </section>
   );
 }
 
@@ -100,7 +100,7 @@ export const FormExample3 = () => {
   };
 
   return (
-    <>
+    <section>
       <h3>Form com custom hook + maps + bind</h3>
       <form onSubmit={handleSubmit}>
         {inputs.map((input) => {
@@ -109,6 +109,6 @@ export const FormExample3 = () => {
         })}
         <button type="submit">Enviar</button>
       </form>
-    </>
+    </section>
   );
 }

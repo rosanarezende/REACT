@@ -129,6 +129,11 @@ margin-bottom: 0.4rem; // 4px
   justify-content: center;
 }
 
+.flex-center2 {
+  display: flex;
+  align-items: center;
+}
+
 .flex-wrap {
   flex-wrap: wrap;
 }

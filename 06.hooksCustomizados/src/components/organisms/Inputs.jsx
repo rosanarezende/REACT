@@ -14,14 +14,14 @@ export const InputExample = () => {
   };
 
   return (
-    <>
+    <section>
       <h3>Input sem custom hook</h3>
       <form onSubmit={handleSubmit}>
         <input type="text" value={name} onChange={(event) => setName(event.target.value)} />
         <input type="email" value={email} onChange={(event) => setEmail(event.target.value)} />
         <button type="submit">Enviar</button>
       </form>
-    </>
+    </section>
   );
 };
 
@@ -38,14 +38,14 @@ export const InputExample1 = () => {
   };
 
   return (
-    <>
+    <section>
       <h3>Input com custom hook simples</h3>
       <form onSubmit={handleSubmit}>
         <input type="text" value={name} onChange={onChangeName} />
         <input type="email" value={email} onChange={onChangeEmail} />
         <button type="submit">Enviar</button>
       </form>
-    </>
+    </section>
   );
 };
 
@@ -61,13 +61,13 @@ export const InputExample2 = () => {
   };
 
   return (
-    <>
+    <section>
       <h3>Input com custom hook avançado</h3>
       <form onSubmit={handleSubmit}>
         <input type="text" {...bindName} />
         <input type="email" {...bindEmail} />
         <button type="submit">Enviar</button>
       </form>
-    </>
+    </section>
   );
 }

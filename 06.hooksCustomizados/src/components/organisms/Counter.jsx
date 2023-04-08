@@ -14,14 +14,14 @@ export const Counter = () => {
   };
 
   return (
-    <div className="flex-column flex-center gap-4">
+    <section className="flex-column flex-center gap-4">
       <h3>Contador SEM custom hook - de 1 em 1</h3>
       <div className="flex-center gap-16">
         <button className="p-8" onClick={decrementCount}>-</button>
         <span>{count}</span>
         <button className="p-8" onClick={incrementCount}>+</button>
       </div>
-    </div>
+    </section>
   );
 };
 
@@ -31,14 +31,14 @@ export const Counter1 = () => {
   const [count, incrementCount, decrementCount] = useCounter1(0);
 
   return (
-    <div className="flex-column flex-center gap-4">
+    <section className="flex-column flex-center gap-4">
       <h3>Contador COM custom hook - de 1 em 1</h3>
       <div className="flex-center gap-16">
         <button className="p-8" onClick={decrementCount}>-</button>
         <span>{count}</span>
         <button className="p-8" onClick={incrementCount}>+</button>
       </div>
-    </div>
+    </section>
   );
 };
 
@@ -55,14 +55,14 @@ const decrementCount = (value) => {
 };
 
 return (
-    <div className="flex-column flex-center gap-4">
+    <section className="flex-column flex-center gap-4">
       <h3>Contador COM custom hook - de x em x</h3>
       <div className="flex-center gap-16">
         <button className="p-8" onClick={() => decrementCount(2)}>-</button>
         <span>{count}</span>
         <button className="p-8" onClick={() => incrementCount(2)}>+</button>
       </div>
-    </div>
+    </section>
   );
 };
 
@@ -72,14 +72,14 @@ export const Counter3 = () => {
   const [count, incrementCount, decrementCount] = useCounter2(0, 2, 2);
 
   return (
-    <div className="flex-column flex-center gap-4">
+    <section className="flex-column flex-center gap-4">
       <h3>Contador COM custom hook - de x em x</h3>
       <div className="flex-center gap-16">
         <button className="p-8" onClick={decrementCount}>-</button>
         <span>{count}</span>
         <button className="p-8" onClick={incrementCount}>+</button>
       </div>
-    </div>
+    </section>
   );
 }
 
@@ -88,13 +88,13 @@ export const Counter4 = () => {
   const [count, incrementCount, decrementCount] = useCounter3(0);
 
   return (
-    <div className="flex-column flex-center gap-4">
+    <section className="flex-column flex-center gap-4">
       <h3>Contador COM custom hook - de x em x </h3>
       <div className="flex-center gap-16">
         <button className="p-8" onClick={() => decrementCount(10)}>-</button>
         <span>{count}</span>
         <button className="p-8" onClick={() => incrementCount(10)}>+</button>
       </div>
-    </div>
+    </section>
   );
 }

@@ -17,10 +17,10 @@ export const Fetch = () => {
   }, []);
 
   return (
-    <div className="flex-column flex-center gap-16">
+    <section className="flex-column flex-center gap-16">
       <h3>Sem custom hook</h3>
       <ProductList products={products} loading={loading} />
-    </div>
+    </section>
   );
 };
 
@@ -29,10 +29,10 @@ export const Fetch1 = () => {
   const products = useFetch1("http://localhost:3005/products");
 
   return (
-    <div className="flex-column flex-center gap-16">
+    <section className="flex-column flex-center gap-16">
       <h3>Com custom hook bem simples</h3>
       <ProductList products={products} />
-    </div>
+    </section>
   )
 }
 
@@ -55,7 +55,7 @@ export const Fetch2 = () => {
   };
 
   return (
-    <div className="flex-column flex-center gap-16">
+    <section className="flex-column flex-center gap-16">
       <h3>Com custom hook mais reaproveitável</h3>
       <ProductList
         products={data}
@@ -64,11 +64,9 @@ export const Fetch2 = () => {
         refetch={refetch}
         deleteProduct={handleDelete}
       />
-    </div>
+    </section>
   )
 }
-
-
 
 export const Fetch3 = () => {
   const { data, error, loading, getData, deleteData } = useFetch3();
@@ -87,7 +85,7 @@ export const Fetch3 = () => {
   }
 
   return (
-    <div className="flex-column flex-center gap-16">
+    <section className="flex-column flex-center gap-16">
       <h3>Com custom hook mais reaproveitável</h3>
       <ProductList
         products={data}
@@ -95,6 +93,6 @@ export const Fetch3 = () => {
         error={error}
         deleteProduct={handleDelete}
       />
-    </div>
+    </section>
   )
 }
