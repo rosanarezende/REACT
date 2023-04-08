@@ -27,13 +27,17 @@
 body {
   background: var(--color-primary-100);
   color: var(--gray-800);
-  font: 400 1.6rem "Roboto", sans-serif;
+  font: 400 1.6rem "Roboto", sans-serif; // 1.6rem
   min-height: 100vh;
 }
 
 main {
-  max-width: 80rem;
+  max-width: 75rem;
   margin: 0 auto;
+}
+
+section {
+  margin-bottom: 3.6rem;
 }
 
 // Podemos criar classes globais
@@ -123,6 +127,10 @@ margin-bottom: 0.4rem; // 4px
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 .flex-column {
