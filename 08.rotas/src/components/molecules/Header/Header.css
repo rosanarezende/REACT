@@ -10,6 +10,7 @@ header div {
   display: flex;
   align-items: center;
   width: 100%;
+  cursor: pointer;
 }
 
 header img {
@@ -22,4 +23,11 @@ header nav {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+header .back {
+  border-radius: 50%;
+  padding: 0.5rem;
+  color: red;
+  font-weight: bold;
 }

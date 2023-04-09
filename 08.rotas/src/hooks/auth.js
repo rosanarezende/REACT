@@ -1,26 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export const useAuth = () => {
-  const [token, setToken] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const token = window.localStorage.getItem('token');
-    if (token) {
-      setToken(token);
-    }
-    setLoading(false);
-  }, []);
+  const token = window.localStorage.getItem('token');
+  const [isLogged, setIsLogged] = useState(!!token);
 
   const login = (token) => {
-    setToken(token);
     window.localStorage.setItem('token', token);
+    setIsLogged(true);
   };
 
   const logout = () => {
-    setToken(null);
     window.localStorage.removeItem('token');
+    setIsLogged(false);
   };
 
-  return { token, login, logout, loading };
+  return { token, login, logout, isLogged };
 };

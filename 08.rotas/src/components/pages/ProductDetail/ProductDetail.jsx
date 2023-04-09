@@ -1,14 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useFetch } from '../../../hooks';
 
 export function ProductDetail() {
-  const [product, setProduct] = useState({});
+  const { data: product, getData } = useFetch();
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:3003/products/${id}`)
-      .then((response) => response.json())
-      .then((data) => setProduct(data));
+    getData(`http://localhost:3001/products/${id}`);
   }, [id]);
 
   return (

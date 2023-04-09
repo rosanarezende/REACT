@@ -1,9 +1,8 @@
 import { Outlet, Navigate } from 'react-router-dom';
-import { useAuth } from '../hooks/auth';
+import { useUserContext } from '../context/user';
 
 export function PrivateRoute() {
-  const { token } = useAuth();
+  const { isLogged } = useUserContext();
 
-  // quando a página de login for implementada, redirecionar para ela
-  return token ? <Outlet /> : <Navigate to="/" />;
+  return isLogged ? <Outlet /> : <Navigate to="/login" />;
 }
