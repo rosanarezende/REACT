@@ -2,7 +2,7 @@ import { useNoteContext } from "../../contexts/NoteContext";
 import NoteItem from "./NoteItem";
 
 const NoteList = () => {
-  const { notes, selectNote } = useNoteContext();
+  const { notes } = useNoteContext();
 
   return (
     <div>
@@ -12,7 +12,6 @@ const NoteList = () => {
           <NoteItem
             key={note.id}
             note={note}
-            onClick={() => selectNote(note.id)}
           />
         ))}
       </div>
