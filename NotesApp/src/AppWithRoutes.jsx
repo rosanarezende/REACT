@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { NoteList, NoteForm, NoteDetails, Header } from './components/withRoutes'
+import { NoteList, NoteForm, NoteDetails, Navbar } from './components/withRoutes'
 
 
 const AppWithRoutes = () => {
   return (
     <BrowserRouter>
-      <Header />
+      <Navbar />
       <Routes>
         <Route path="/" element={<NoteList />} />
         <Route path="/create" element={<NoteForm />} />
