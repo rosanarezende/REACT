@@ -1,13 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App, { AppSemContext } from './App'
 import './index.css'
+
 import { NoteProvider } from './contexts/NoteContext'
+
+import App from './App'
+import AppWithContext from './AppWithContext'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <NoteProvider>
-      <App />
+      <AppWithContext />
     </NoteProvider>
   </React.StrictMode>,
 )
