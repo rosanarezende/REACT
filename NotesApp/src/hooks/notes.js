@@ -1,14 +1,17 @@
-// useNotes.js - Hook customizado para gerenciar o estado das anotações
-
-/*
-Crie um hook customizado para gerenciar o estado das anotações, como título, conteúdo e data de criação. O hook customizado deve permitir que as anotações sejam adicionadas, atualizadas e excluídas.
-*/
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const useNotes = () => {
   const [notes, setNotes] = useState([]);
   const [selectedNote, setSelectedNote] = useState(null);
+
+  useEffect(() => {
+    const notes = JSON.parse(localStorage.getItem('notes')) || [];
+    setNotes(notes);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('notes', JSON.stringify(notes));
+  }, [notes]);
 
   const selectNote = (id) => {
     const selectedNote = notes.find(note => note.id === id);
