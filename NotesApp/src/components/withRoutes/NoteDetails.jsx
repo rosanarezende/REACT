@@ -15,7 +15,6 @@ const NoteDetails = () => {
         <>
           <p>Título: {selectedNote?.title}</p>
           <p>Conteúdo: {selectedNote?.content}</p>
-          {/* botão de editar */}
           <button onClick={() => navigate(`/edit/${selectedNote.id}`)}>
             Editar
           </button>
