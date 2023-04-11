@@ -300,5 +300,7 @@ margin-bottom: 0.4rem; // 4px
   border-radius: 2.4rem;
 }
 
-
+img {
+  max-width: 200px;
+}
 

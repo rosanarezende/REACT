@@ -7,17 +7,21 @@ import { useState, useEffect } from "react";
 export const useFetch1 = (url) => {
   const [data, setData] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch(url);
-      const json = await res.json();
-      setData(json);
-    };
+  const fetchData = async () => {
+    const res = await fetch(url);
+    const json = await res.json();
+    setData(json);
+  };
 
+  useEffect(() => {
     fetchData();
   }, [url]);
 
-  return data;
+  const refetch = () => {
+    fetchData();
+  };
+
+  return [data, refetch];
 };
 
 // Esse useFetch é um pouco mais completo, ele tem um loading e um error
@@ -53,10 +57,14 @@ export const useFetch2 = (url) => {
 
 
 // Esse fetch nos permite fazer requisições de forma mais simples
-export const useFetch3 = () => {
+export const useFetch3 = (urlParam) => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    getData();
+  }, [urlParam]);
 
   const fetchData = async (url, method, body) => {
     setLoading(true);
@@ -78,7 +86,7 @@ export const useFetch3 = () => {
     }
   };
 
-  const getData = async (url) => await fetchData(url, "GET");
+  const getData = async () => await fetchData(urlParam, "GET");
 
   const postData = async (url, body) => await fetchData(url, "POST", body);
 
