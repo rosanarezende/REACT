@@ -5,14 +5,12 @@ import { ProductList } from "components/molecules";
 // sem custom hook
 export const Fetch = () => {
   const [products, setProducts] = useState(null);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("http://localhost:3005/products")
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);
-        setLoading(false);
       });
   }, []);
 
@@ -47,11 +45,8 @@ export const Fetch2 = () => {
       },
       body: JSON.stringify(product),
     })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        refetch();
-      });
+
+    refetch();
   };
 
   return (
@@ -61,7 +56,6 @@ export const Fetch2 = () => {
         products={data}
         loading={loading}
         error={error}
-        refetch={refetch}
         deleteProduct={handleDelete}
       />
     </section>

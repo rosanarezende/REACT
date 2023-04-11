@@ -21,8 +21,8 @@ export const useFetch1 = (url) => {
 };
 
 // Esse useFetch é um pouco mais completo, ele tem um loading e um error
-// Pode ser usado para qualquer requisição (GET, POST, PUT, DELETE)
-export const useFetch2 = (url, options) => {
+// Também tem um refetch, que é uma função que pode ser chamada para refazer a requisição
+export const useFetch2 = (url) => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -30,7 +30,7 @@ export const useFetch2 = (url, options) => {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const res = await fetch(url, options);
+      const res = await fetch(url);
       const json = await res.json();
       setData(json);
     } catch (error) {
@@ -42,7 +42,7 @@ export const useFetch2 = (url, options) => {
 
   useEffect(() => {
     fetchData();
-  }, [url, options]);
+  }, [url]);
 
   const refetch = () => {
     fetchData();

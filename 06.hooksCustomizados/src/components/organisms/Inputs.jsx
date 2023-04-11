@@ -27,14 +27,15 @@ export const InputExample = () => {
 
 // com custom hook
 export const InputExample1 = () => {
-  const [name, onChangeName] = useInput1("");
-  const [email, onChangeEmail] = useInput1("");
+  const [name, onChangeName, resetName] = useInput1("");
+  const [email, onChangeEmail, resetEmail] = useInput1("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(name, email);
-    onChangeName("");
-    onChangeEmail("");
+
+    resetName();
+    resetEmail();
   };
 
   return (

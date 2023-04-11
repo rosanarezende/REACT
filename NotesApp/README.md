@@ -36,3 +36,6 @@ Foram criadas 3 versões para fins educacionais dentro da pasta `/src`:
 3. Crie um componente `NotFound` para conter a página 404.
 
 4. Refatore o componente `App` a partir do arquivo `AppWithRoutes` para que ele utilize as rotas criadas.
+
+
+DESAFIO: Adicione a lógica de salvar e atualizar os dados através do localStorage

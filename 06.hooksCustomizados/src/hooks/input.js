@@ -5,7 +5,9 @@ export const useInput1 = (initialValue) => {
 
   const onChange = (e) => setValue(e.target.value)
 
-  return [value, onChange]
+  const reset = () => setValue(initialValue)
+
+  return [value, onChange, reset]
 }
 
 
