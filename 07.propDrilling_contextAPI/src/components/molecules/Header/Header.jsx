@@ -1,13 +1,11 @@
-import { ThemeContext, useThemeContext } from "../../../contexts/theme";
-import { useState } from "react";
+import "./Header.css";
+import { useThemeContext } from "../../../contexts/theme";
 
 export default function Header() {
   const { theme, setTheme } = useThemeContext();
-  const [botaoClicado, setBotaoClicado] = useState(null);
 
   const mudarTema = (tema) => {
     setTheme(tema);
-    setBotaoClicado(tema);
   };
 
   return (
@@ -16,18 +14,8 @@ export default function Header() {
 
       {/* Usando o hook useContext (que está no arquivo theme.jsx) */}
       <div>
-        <button
-          onClick={() => mudarTema("black")}
-          style={{ fontSize: botaoClicado === "black" ? "1.5rem" : "1rem" }}
-        >
-          Escuro
-        </button>
-        <button
-          onClick={() => mudarTema("white")}
-          style={{ fontSize: botaoClicado === "white" ? "1.5rem" : "1rem" }}
-        >
-          Claro
-        </button>
+        <button onClick={() => mudarTema("black")}>Escuro</button>
+        <button onClick={() => mudarTema("white")}>Claro</button>
       </div>
     </header>
   );
