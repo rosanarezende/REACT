@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { Login, Dashboard} from './pages'
+import { Login, Dashboard, Register, Units } from './pages'
 
 export default function App() {
 
@@ -10,6 +10,8 @@ export default function App() {
 
         <Route path="/" element={<Dashboard />} />
         <Route path="/dashboard" element={<Navigate to="/" />} />
+        <Route path="/cadastro" element={<Register />} />
+        <Route path="/unidades" element={<Units />} />
 
         <Route path="*" element={<div>Não encontrado</div>} />
       </Routes>

@@ -2,10 +2,10 @@ import "./Menu.css";
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import Logo from "../../../assets/logo.svg";
-import Dashboard from "../../../assets/dashboard.svg";
-import UnidadeConsumidora from "../../../assets/unidade-consumidora.svg";
-import CadastroEnergiaGerada from "../../../assets/cadastro-energia-gerada.svg";
+import logo from "../../../assets/logo.svg";
+import { ReactComponent as Dashboard } from "../../../assets/dashboard.svg";
+import { ReactComponent as UnidadeConsumidora } from "../../../assets/unidade-consumidora.svg";
+import { ReactComponent as CadastroEnergiaGerada } from "../../../assets/cadastro-energia-gerada.svg";
 
 const Menu = () => {
   const location = useLocation();
@@ -17,7 +17,7 @@ const Menu = () => {
   return (
     <nav className="menu">
       <Link to="/">
-        <Logo />
+        <img src={logo} alt="Solar Energy logo" />
       </Link>
 
       <ul>
@@ -27,14 +27,14 @@ const Menu = () => {
             Dashboard
           </Link>
         </li>
-        <li className={isSelected("/unidades-consumidoras")}>
-          <Link to="/unidades-consumidoras">
+        <li className={isSelected("/unidades")}>
+          <Link to="/unidades">
             <UnidadeConsumidora />
             Unidade Consumidora
           </Link>
         </li>
-        <li className={isSelected("/cadastro-energia-gerada")}>
-          <Link to="/cadastro-energia-gerada">
+        <li className={isSelected("/cadastro")}>
+          <Link to="/cadastro">
             <CadastroEnergiaGerada />
             Cadastro de Energia Gerada
           </Link>

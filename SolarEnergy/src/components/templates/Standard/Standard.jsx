@@ -1,11 +1,14 @@
 import "./Standard.css";
 import { Menu } from "../../molecules";
 
-export default function Standard ({ children }) {
+export default function Standard ({ children, title }) {
   return (
     <div className="standard">
       <Menu />
-      <div className="main">{children}</div>
+      <main>
+        <h1>{title}</h1>
+        {children}
+      </main>
     </div>
   );
 };

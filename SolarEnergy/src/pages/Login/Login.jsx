@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import backgroundImage from "../../assets/background.svg";
 import { Button, Input } from "../../components/atoms";
 
-import EmailImage from "../../assets/email.svg";
-import PasswordImage from "../../assets/password.svg";
-import Logo from "../../assets/logo2.svg";
+import backgroundImage from "../../assets/background.svg";
+import emailImage from "../../assets/email.svg";
+import passwordImage from "../../assets/password.svg";
+import logo from "../../assets/logo2.svg";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -54,7 +54,7 @@ export default function Login() {
             margin: "0 36px",
           }}
         >
-          <Logo />
+          <img src={logo} alt="Solar Energy logo" />
           <h2
             style={{
               color: "#374557",
@@ -74,7 +74,7 @@ export default function Login() {
               required
               type="email"
               placeholder="E-mail"
-              icon={<EmailImage />}
+              icon={emailImage}
               value={email}
               onChange={(event) => setEmail(event.target.value)}
             />
@@ -82,7 +82,7 @@ export default function Login() {
               required
               type="password"
               placeholder="Senha"
-              icon={<PasswordImage />}
+              icon={passwordImage}
               value={password}
               onChange={(event) => setPassword(event.target.value)}
             />
