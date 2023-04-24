@@ -1,5 +1,5 @@
 import "./Standard.css";
-import { Menu } from "../../molecules";
+import { Menu } from "../../organisms";
 
 export default function Standard ({ children, title }) {
   return (

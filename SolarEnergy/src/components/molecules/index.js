@@ -1,1 +1,1 @@
-export { default as Menu } from './Menu/Menu';
+export { default as Card } from './Card/Card';

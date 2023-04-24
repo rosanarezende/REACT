@@ -1,0 +1,118 @@
+{
+  "unidades": [
+    {
+      "id": "abc",
+      "apelido": "Unidade 1",
+      "local": "Rua 1",
+      "marca": "Marca 1",
+      "modelo": "Modelo 1",
+      "ativa": true
+    },
+    {
+      "id": "def",
+      "apelido": "Unidade 2",
+      "local": "Rua 2",
+      "marca": "Marca 2",
+      "modelo": "Modelo 2",
+      "ativa": false
+    },
+    {
+      "id": "ghi",
+      "apelido": "Unidade 3",
+      "local": "Rua 3",
+      "marca": "Marca 3",
+      "modelo": "Modelo 3",
+      "ativa": true
+    },
+    {
+      "id": "jkl",
+      "apelido": "Unidade 4",
+      "local": "Rua 4",
+      "marca": "Marca 4",
+      "modelo": "Modelo 4",
+      "ativa": false
+    },
+    {
+      "apelido": "f",
+      "local": "f",
+      "marca": "",
+      "modelo": "",
+      "ativa": false,
+      "id": "8di9NhE"
+    },
+    {
+      "apelido": "teste",
+      "local": "lalal",
+      "marca": "aaa",
+      "modelo": "lala",
+      "ativa": true,
+      "id": "sxfwwLf"
+    },
+    {
+      "apelido": "g",
+      "local": "g",
+      "marca": "g",
+      "modelo": "g",
+      "ativa": false,
+      "id": "31fe6db"
+    },
+    {
+      "apelido": "f",
+      "local": "f",
+      "marca": "f",
+      "modelo": "f",
+      "ativa": true,
+      "id": "UNAboLQ"
+    }
+  ],
+  "geracoes": [
+    {
+      "id": "123",
+      "unidade": "abc",
+      "data": "01/2023",
+      "total": 100
+    },
+    {
+      "id": "123",
+      "unidade": "abc",
+      "data": "02/2023",
+      "total": 800
+    },
+    {
+      "id": "456",
+      "unidade": "abc",
+      "data": "03/2023",
+      "total": 360
+    },
+    {
+      "id": "456",
+      "unidade": "abc",
+      "data": "04/2023",
+      "total": 250
+    },
+    {
+      "id": "789",
+      "unidade": "def",
+      "data": "04/2023",
+      "total": 710
+    },
+    {
+      "id": "101",
+      "unidade": "def",
+      "data": "05/2023",
+      "total": 320
+    },
+    {
+      "id": "112",
+      "unidade": "def",
+      "data": "06/2023",
+      "total": 240
+    },
+    {
+      "id": "131",
+      "unidade": "def",
+      "data": "07/2023",
+      "total": 660
+    }
+  ]
+}
