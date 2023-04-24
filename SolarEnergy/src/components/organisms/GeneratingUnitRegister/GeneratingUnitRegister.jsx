@@ -1,4 +1,6 @@
+import "./GeneratingUnitRegister.css";
 import { useForm, useFetch } from "../../../hooks";
+import { Button, Input } from "../../atoms";
 
 export default function GeneratingUnitRegister({
   unitSelected,
@@ -28,30 +30,34 @@ export default function GeneratingUnitRegister({
   };
 
   return (
-    <section>
+    <section className="generating-unit-register">
       <h2>Cadastro de Unidade Geradora</h2>
       <form onSubmit={handleSave}>
-        <label>
-          Apelido
-          <input type="text" name="apelido" {...bindForm("apelido")} />
-        </label>
-        <label>
-          Local
-          <input type="text" name="local" {...bindForm("local")} />
-        </label>
-        <label>
-          Marca
-          <input type="text" name="marca" {...bindForm("marca")} />
-        </label>
-        <label>
-          Modelo
-          <input type="text" name="modelo" {...bindForm("modelo")} />
-        </label>
-        <label>
-          Ativa
-          <input type="checkbox" name="ativa" {...bindForm("ativa", true)} />
-        </label>
-        <button type="submit">Salvar</button>
+        <div>
+          <label for="apelido">Apelido</label>
+          <Input type="text" name="apelido" {...bindForm("apelido")} />
+        </div>
+        <div>
+          <label for="local">Local</label>
+          <Input type="text" name="local" {...bindForm("local")} />
+        </div>
+
+        <div>
+          <label for="marca"> Marca </label>
+          <Input type="text" name="marca" {...bindForm("marca")} />
+        </div>
+
+        <div>
+          <label for="modelo"> Modelo </label>
+          <Input type="text" name="modelo" {...bindForm("modelo")} />
+        </div>
+        <div className="checkbox">
+          <input type="checkbox" name="ativa" {...bindForm("ativa", true)} />{" "}
+          <label for="ativa">Ativo</label>
+        </div>
+        <Button classStyle="secondary" type="submit">
+          Salvar
+        </Button>
       </form>
     </section>
   );

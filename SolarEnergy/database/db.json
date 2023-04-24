@@ -69,50 +69,56 @@
     {
       "id": "123",
       "unidade": "abc",
-      "data": "01/2023",
+      "data": "2023-01",
       "total": 100
     },
     {
       "id": "123",
       "unidade": "abc",
-      "data": "02/2023",
+      "data": "2023-02",
       "total": 800
     },
     {
       "id": "456",
       "unidade": "abc",
-      "data": "03/2023",
+      "data": "2023-03",
       "total": 360
     },
     {
       "id": "456",
       "unidade": "abc",
-      "data": "04/2023",
+      "data": "2023-04",
       "total": 250
     },
     {
       "id": "789",
       "unidade": "def",
-      "data": "04/2023",
+      "data": "2023-04",
       "total": 710
     },
     {
       "id": "101",
       "unidade": "def",
-      "data": "05/2023",
+      "data": "2023-05",
       "total": 320
     },
     {
       "id": "112",
       "unidade": "def",
-      "data": "06/2023",
+      "data": "2023-06",
       "total": 240
     },
     {
       "id": "131",
       "unidade": "def",
-      "data": "07/2023",
+      "data": "2023-07",
       "total": 660
+    },
+    {
+      "unidade": "ghi",
+      "data": "2023-03",
+      "total": 100,
+      "id": "8LHGAad"
     }
   ]
 }

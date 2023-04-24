@@ -1,0 +1,45 @@
+.generating-unit-register {
+  margin: 69px 62px;
+}
+
+.generating-unit-register h2 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 42px;
+  color: #374557;
+  margin-bottom: 51px;
+}
+
+.generating-unit-register form {
+  display: flex;
+  flex-direction: column;
+}
+
+.generating-unit-register input {
+  height: 57px;
+  widht: 633px;
+}
+
+.generating-unit-register label {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+  color: #53575d;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.generating-unit-register div.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.generating-unit-register div.checkbox label {
+  margin-bottom: 0;
+}
