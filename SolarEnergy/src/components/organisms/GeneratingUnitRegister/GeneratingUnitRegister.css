@@ -1,7 +1,3 @@
-.generating-unit-register {
-  margin: 69px 62px;
-}
-
 .generating-unit-register h2 {
   font-family: "Poppins";
   font-style: normal;
@@ -30,16 +26,23 @@
   line-height: 24px;
   color: #53575d;
   display: block;
-  margin-bottom: 15px;
+  margin-bottom: 8px;
 }
 
 .generating-unit-register div.checkbox {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 25px;
+  /* gap: 10px; */
+  margin-bottom: 20px;
 }
 
 .generating-unit-register div.checkbox label {
   margin-bottom: 0;
+}
+
+.generating-unit-register div.checkbox input {
+  width: 29px;
+  height: 28px;
+  border: 1px solid #000000;
+  margin:  20px 17px 20px 10px;
 }

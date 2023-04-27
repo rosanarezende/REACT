@@ -68,10 +68,7 @@ export default function UnitList({ setOpenUnitRegister, setUnitSelected }) {
       <Button
         classStyle="secondary"
         onClick={() => setOpenUnitRegister(true)}
-        style={{
-          alignSelf: "flex-end",
-          marginTop: "50px",
-        }}
+        style={{ alignSelf: "flex-end" }}
       >
         Nova unidade
       </Button>

@@ -80,7 +80,7 @@ export default function Chart({ data }) {
             scales: {
               y: {
                 beginAtZero: true,
-                max: 1000,
+                // max: 1000,
                 position: "right",
               },
               x: {

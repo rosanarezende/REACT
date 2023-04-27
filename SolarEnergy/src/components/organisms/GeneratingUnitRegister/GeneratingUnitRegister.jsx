@@ -52,7 +52,9 @@ export default function GeneratingUnitRegister({
           <Input type="text" name="modelo" {...bindForm("modelo")} />
         </div>
         <div className="checkbox">
-          <input type="checkbox" name="ativa" {...bindForm("ativa", true)} />{" "}
+          <input type="checkbox" name="ativa" {...bindForm("ativa", true)}
+            defaultChecked={bindForm("ativa", true).value}
+          />{" "}
           <label for="ativa">Ativo</label>
         </div>
         <Button classStyle="secondary" type="submit">

@@ -1,16 +1,23 @@
 .unit-list {
   display: flex;
   flex-direction: column;
-  width: 60%;
-  margin: 110px 220px;
+  margin: 0 auto;
+  width: 100%;
+  min-width: 824px;
+  max-width: 1124px;
 }
 
 .unit-list h2 {
-  margin-bottom: 50px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 42px;
+  color: #374557;
 }
 
-
 .unit-list table {
+  margin: 50px auto;
   border-collapse: collapse;
   width: 100%;
   border-radius: 8px;

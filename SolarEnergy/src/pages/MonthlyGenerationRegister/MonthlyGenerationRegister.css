@@ -1,9 +1,3 @@
-.monthly-generation-register {
-  display: flex;
-  flex-direction: column;
-  margin: 50px 0 0 200px;
-}
-
 .monthly-generation-register  input {
   width: 250px;
   height: 57px;

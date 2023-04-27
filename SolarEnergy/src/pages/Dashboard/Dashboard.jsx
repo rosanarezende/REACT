@@ -33,8 +33,8 @@ export default function Dashboard() {
         style={{
           display: "flex",
           justifyContent: "space-between",
-          margin: "40px auto",
-          width: "70%",
+          margin: "0 auto 40px",
+          // width: "70%",
         }}
       >
         <Card title="Total de unidades" value={unitsTotal} />
