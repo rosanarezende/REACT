@@ -1,4 +1,4 @@
-import "./Menu.css";
+import "./Navbar.css";
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -7,12 +7,30 @@ import { ReactComponent as Dashboard } from "../../../assets/dashboard.svg";
 import { ReactComponent as UnidadeConsumidora } from "../../../assets/unidade-consumidora.svg";
 import { ReactComponent as CadastroEnergiaGerada } from "../../../assets/cadastro-energia-gerada.svg";
 
-const Menu = () => {
+export default function Navbar() {
   const location = useLocation();
 
   const isSelected = (pathname) => {
     return location.pathname === pathname ? "selected" : "";
   };
+
+  const links = [
+    {
+      path: "/",
+      label: "Dashboard",
+      icon: <Dashboard />,
+    },
+    {
+      path: "/unidades",
+      label: "Unidade Consumidora",
+      icon: <UnidadeConsumidora />,
+    },
+    {
+      path: "/cadastro",
+      label: "Cadastro de Energia Gerada",
+      icon: <CadastroEnergiaGerada />,
+    },
+  ]
 
   return (
     <nav className="menu">
@@ -21,27 +39,15 @@ const Menu = () => {
       </Link>
 
       <ul>
-        <li className={isSelected("/")}>
-          <Link to="/">
-            <Dashboard />
-            Dashboard
-          </Link>
-        </li>
-        <li className={isSelected("/unidades")}>
-          <Link to="/unidades">
-            <UnidadeConsumidora />
-            Unidade Consumidora
-          </Link>
-        </li>
-        <li className={isSelected("/cadastro")}>
-          <Link to="/cadastro">
-            <CadastroEnergiaGerada />
-            Cadastro de Energia Gerada
-          </Link>
-        </li>
+        {links.map((link) => (
+          <li className={isSelected(link.path)} key={link.path}>
+            <Link to={link.path}>
+              {link.icon}
+              {link.label}
+            </Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );
 };
-
-export default Menu;

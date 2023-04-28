@@ -66,9 +66,9 @@ export default function UnitList({ setOpenUnitRegister, setUnitSelected }) {
         </tbody>
       </table>
       <Button
+        id="new-unit"
         classStyle="secondary"
         onClick={() => setOpenUnitRegister(true)}
-        style={{ alignSelf: "flex-end" }}
       >
         Nova unidade
       </Button>

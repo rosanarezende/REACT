@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Standard } from "../../components/templates";
-import { GeneratingUnitRegister, UnitList } from "../../components/organisms";
+import { UnitRegister, UnitList } from "../../components/organisms";
 
 export default function Units() {
   const [openUnitRegister, setOpenUnitRegister] = useState(false);
@@ -9,9 +9,15 @@ export default function Units() {
   return (
     <Standard title="Unidades">
       {openUnitRegister ? (
-        <GeneratingUnitRegister setOpenUnitRegister={setOpenUnitRegister} unitSelected={unitSelected} />
+        <UnitRegister
+          setOpenUnitRegister={setOpenUnitRegister}
+          unitSelected={unitSelected}
+        />
       ) : (
-        <UnitList setOpenUnitRegister={setOpenUnitRegister} setUnitSelected={setUnitSelected} />
+        <UnitList
+          setOpenUnitRegister={setOpenUnitRegister}
+          setUnitSelected={setUnitSelected}
+        />
       )}
     </Standard>
   );

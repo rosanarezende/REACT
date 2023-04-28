@@ -43,7 +43,7 @@ export default function Chart({ data }) {
 
   const groupDataByMonth = (data) => {
     const groupedData = {};
-    data.forEach((item) => {
+    data?.forEach((item) => {
       const month = item.data.split("-")[1];
       const monthName = convertMonthNumberToName(month);
       if (!groupedData[monthName]) {

@@ -1,16 +1,14 @@
 import "./Standard.css";
-import { Menu } from "../../organisms";
+import { Navbar } from "../../molecules";
 
 export default function Standard({ children, title }) {
   return (
-    <div className="standard">
-      <Menu />
-      <main>
+    <div className="container">
+      <Navbar />
+      <header>
         <h1>{title}</h1>
-        <div className="container">
-          {children}
-        </div>
-      </main>
+      </header>
+      <main>{children}</main>
     </div>
   );
-};
+}

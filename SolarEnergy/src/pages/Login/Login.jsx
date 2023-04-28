@@ -1,3 +1,4 @@
+import "./Login.css";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Input } from "../../components/atoms";
@@ -29,69 +30,34 @@ export default function Login() {
   }
 
   return (
-    <div style={{ display: "flex", minHeight: "100vh" }}>
+    <div className="login">
       <div
-        style={{
-          flex: 1,
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: "cover",
-        }}
+        className="background"
+        style={{ backgroundImage: `url(${backgroundImage})` }}
       ></div>
-      <div
-        style={{
-          flex: 1,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <div
-          style={{
-            maxWidth: "518px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            margin: "0 36px",
-          }}
-        >
-          <img src={logo} alt="Solar Energy logo" />
-          <h2
-            style={{
-              color: "#374557",
-              marginBottom: 38,
-              fontSize: 24,
-              fontWeight: 500,
-              letterSpacing: 0,
-            }}
-          >
-            Seja bem-vindo!
-          </h2>
-          <form
-            onSubmit={handleSubmit}
-            style={{ display: "flex", flexDirection: "column", width: "100%" }}
-          >
-            <Input
-              required
-              type="email"
-              placeholder="E-mail"
-              icon={emailImage}
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-            />
-            <Input
-              required
-              type="password"
-              placeholder="Senha"
-              icon={passwordImage}
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-            />
-            {error && (
-              <div style={{ marginBottom: 16, color: "#f00" }}>{error}</div>
-            )}
-            <Button type="submit">Entrar</Button>
-          </form>
-        </div>
+      <div className="content">
+        <img src={logo} alt="Solar Energy logo" />
+        <h2>Seja bem-vindo!</h2>
+        <form onSubmit={handleSubmit}>
+          <Input
+            required
+            type="email"
+            placeholder="E-mail"
+            icon={emailImage}
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+          />
+          <Input
+            required
+            type="password"
+            placeholder="Senha"
+            icon={passwordImage}
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+          />
+          {error && <div className="error" >{error}</div>}
+          <Button type="submit">Entrar</Button>
+        </form>
       </div>
     </div>
   );

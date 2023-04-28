@@ -1,23 +1,15 @@
-import { useState, useEffect } from "react";
 import { Standard } from "../../components/templates";
 import { Chart } from "../../components/organisms";
 import { Card } from "../../components/molecules";
+import { useFetch } from "../../hooks";
 
 export default function Dashboard() {
-  const [units, setUnits] = useState([]);
-  const [generation, setGeneration] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:3003/unidades")
-      .then((response) => response.json())
-      .then((data) => setUnits(data));
-  }, []);
-
-  useEffect(() => {
-    fetch("http://localhost:3003/geracoes")
-      .then((response) => response.json())
-      .then((data) => setGeneration(data));
-  }, []);
+  const { data: units, loading: unitsLoading } = useFetch(
+    `http://localhost:3003/unidades`
+  );
+  const { data: generation, loading: generationLoading } = useFetch(
+    "http://localhost:3003/geracoes"
+  );
 
   const unitsTotal = units?.length;
   const activeUnits = units?.filter((unit) => unit.ativa).length;
@@ -28,22 +20,16 @@ export default function Dashboard() {
 
   return (
     <Standard title="Dashboard">
-      <section
-        className="cards"
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          margin: "0 auto 40px",
-          // width: "70%",
-        }}
-      >
-        <Card title="Total de unidades" value={unitsTotal} />
-        <Card title="Unidades ativas" value={activeUnits} />
-        <Card title="Unidades inativas" value={inactiveUnits} />
-        <Card title="Média de energia" value={generationMean} />
-      </section>
+      {!unitsLoading && (
+        <section style={{ display: "flex", justifyContent: "space-between" }}>
+          <Card title="Total de unidades" value={unitsTotal} />
+          <Card title="Unidades ativas" value={activeUnits} />
+          <Card title="Unidades inativas" value={inactiveUnits} />
+          <Card title="Média de energia" value={generationMean} />
+        </section>
+      )}
 
-      <Chart data={generation} />
+      {!generationLoading && <Chart data={generation} />}
     </Standard>
   );
 }

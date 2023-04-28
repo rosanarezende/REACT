@@ -1,7 +1,7 @@
 .chart {
-  width: 80%;
-  /* min-width: 961px; */
-  margin: 0 auto;
+  width: 75%;
+  max-width: 45vw;
+  margin: 40px auto -5vh;
   background-color: #ffffff;
   border: 1px solid #dfe0eb;
   padding: 20px;
@@ -13,7 +13,7 @@
   font-size: 20px;
   font-weight: 500;
   line-height: 30px;
-  letter-spacing: 0.15000000596046448px;
+  letter-spacing: 0.15px;
   text-align: left;
   color: #000000de;
   margin-bottom: 55px;
