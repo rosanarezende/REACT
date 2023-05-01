@@ -1,5 +1,4 @@
 import "./UnitList.css";
-import { useNavigate } from "react-router-dom";
 import { Button } from "../../atoms";
 import { useFetch } from "../../../hooks";
 
@@ -7,7 +6,6 @@ export default function UnitList({ setOpenUnitRegister, setUnitSelected }) {
   const { data: units, deleteData } = useFetch(
     "http://localhost:3003/unidades"
   );
-  const navigate = useNavigate();
 
   const handleRemove = (id) => {
     deleteData(`http://localhost:3003/unidades/${id}`);
