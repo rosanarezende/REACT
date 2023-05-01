@@ -7,9 +7,24 @@ import {
   PointElement,
   LineElement,
 } from "chart.js";
+import { useFetch } from "../../../hooks";
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement);
 
-export default function Chart({ data }) {
+export default function Chart({ filter }) {
+  const { data: units } = useFetch(
+    `http://localhost:3003/unidades`
+  );
+  const { data: generation, loading: generationLoading } = useFetch(
+    "http://localhost:3003/geracoes"
+  );
+
+  const generationData = generation?.filter((gen) => {
+    const unit = units?.find((unit) => unit.id === gen.unidade);
+    if (filter === "all") return true;
+    if (filter === "active") return unit?.ativa;
+    if (filter === "inactive") return !unit?.ativa;
+  });
+
   const convertMonthNumberToName = (monthNumber) => {
     switch (monthNumber) {
       case "01":
@@ -54,7 +69,7 @@ export default function Chart({ data }) {
     return groupedData;
   };
 
-  const groupedData = groupDataByMonth(data);
+  const groupedData = groupDataByMonth(generationData);
 
   const chartData = {
     labels: Object.keys(groupedData).slice(-6),
@@ -70,7 +85,7 @@ export default function Chart({ data }) {
     ],
   };
 
-  return (
+  return !generationLoading && (
     <section className="chart">
       <h2>Total de energia gerada por mês</h2>
       {chartData && (

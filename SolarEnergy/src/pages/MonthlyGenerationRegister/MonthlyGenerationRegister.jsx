@@ -32,7 +32,7 @@ export default function MonthlyGenerationRegister() {
     <Standard title="Lançamento de geração mensal">
         <form onSubmit={handleSave} className="monthly-generation-register">
           <div>
-            <label for="unidade">Unidade geradora:</label>
+            <label htmlFor="unidade">Unidade geradora:</label>
             <select id="unidade" name="unidade" {...bindForm("unidade")}>
               <option value="">Selecione uma unidade</option>
               {units?.map((unit) => (
@@ -43,12 +43,12 @@ export default function MonthlyGenerationRegister() {
             </select>
           </div>
           <div>
-            <label for="data">Mês/ano:</label>
+            <label htmlFor="data">Mês/ano:</label>
             <Input type="month" id="data" name="data" {...bindForm("data")} />
           </div>
 
           <div>
-            <label for="total">Total kw gerado:</label>
+            <label htmlFor="total">Total kw gerado:</label>
             <Input
               type="number"
               id="total"
