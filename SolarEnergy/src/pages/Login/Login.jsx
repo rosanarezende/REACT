@@ -23,6 +23,7 @@ export default function Login() {
     } else {
       // Aqui você pode fazer a chamada para a API para validar o login
       console.log({ email, password });
+      localStorage.setItem("token", "logado")
 
       // Se o login for válido, redirecione para a tela de dashboard
       navigate("/");

@@ -3,7 +3,7 @@
     {
       "id": "abc",
       "apelido": "Unidade 1",
-      "local": "Rua 1",
+      "local": "Rua 123",
       "marca": "Marca 1",
       "modelo": "Modelo 1",
       "ativa": true
@@ -37,7 +37,7 @@
       "local": "Rua Lala",
       "marca": "Ferrari",
       "modelo": "Massa",
-      "ativa": true,
+      "ativa": false,
       "id": "0NqWhjH"
     }
   ],
@@ -101,6 +101,12 @@
       "data": "2023-04",
       "total": 300,
       "id": "vtDKmun"
+    },
+    {
+      "unidade": "0NqWhjH",
+      "data": "2023-01",
+      "total": 500,
+      "id": "x6s3-O-"
     }
   ]
 }
