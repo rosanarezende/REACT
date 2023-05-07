@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 
-import { unidades, geracoes } from "./mocks/api";
+import { unidades, geracoes } from "./mocks/fakeApi";
 
 global.fetch = jest.fn((url) => {
   if (url.includes("/unidades")) {

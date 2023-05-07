@@ -3,7 +3,7 @@ export const unidades = [
   {
     id: 1,
     apelido: "Unidade 1",
-    local: "São Paulo",
+    local: "Rua 1",
     marca: "Marca 1",
     modelo: "Modelo 1",
     ativa: true,
@@ -11,7 +11,7 @@ export const unidades = [
   {
     id: 2,
     apelido: "Unidade 2",
-    local: "São Paulo",
+    local: "Rua 2",
     marca: "Marca 2",
     modelo: "Modelo 2",
     ativa: false,
@@ -19,7 +19,7 @@ export const unidades = [
   {
     id: 3,
     apelido: "Unidade 3",
-    local: "São Paulo",
+    local: "Rua 3",
     marca: "Marca 3",
     modelo: "Modelo 3",
     ativa: true,
