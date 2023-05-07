@@ -1,18 +1,33 @@
 // https://testing-library.com/docs/example-react-router
 import { render, screen } from "@testing-library/react";
-import userEvent from '@testing-library/user-event'
+import userEvent from "@testing-library/user-event";
+import { BrowserRouter, MemoryRouter } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
-import {BrowserRouter} from 'react-router-dom'
+
+// jest.mock("react-router-dom", () => ({
+//   ...jest.requireActual("react-router-dom"),
+//   useLocation: jest.fn(),
+//   useNavigate: jest.fn(),
+// }));
+// const navigateMock = jest.fn();
+// const locationMock = { pathname: "/" };
 
 const renderComponent = () => {
-  render(
-    <BrowserRouter>
+  return render(
+    <MemoryRouter>
       <Navbar />
-    </BrowserRouter>
+    </MemoryRouter>
   );
 };
 
 describe("Navbar", () => {
+  // beforeEach(() => {
+  //   jest.clearAllMocks();
+  //   useNavigate.mockReturnValue(navigateMock);
+  //   useLocation.mockReturnValue(locationMock);
+  // });
+
   // Teste se o componente é renderizado corretamente
   it("should render Navbar component", () => {
     renderComponent();
@@ -27,7 +42,9 @@ describe("Navbar", () => {
 
     const dashboardButton = screen.getByText("Dashboard").closest("button");
     const unitButton = screen.getByText("Unidades").closest("button");
-    const registerButton = screen.getByText("Cadastro de energia gerada").closest("button");
+    const registerButton = screen
+      .getByText("Cadastro de energia gerada")
+      .closest("button");
 
     expect(dashboardButton).toHaveClass("selected");
     expect(unitButton).not.toHaveClass("selected");
@@ -37,30 +54,54 @@ describe("Navbar", () => {
   // Testa se a página é alterada quando clica em algum botão
   it("should change page when click on button", async () => {
     renderComponent();
-    const user = userEvent.setup()
+    const user = userEvent.setup();
 
     const unitButton = screen.getByText("Unidades").closest("button");
-    await user.click(unitButton)
+    await user.click(unitButton);
     expect(unitButton).toHaveClass("selected");
 
     const dashboardButton = screen.getByText("Dashboard").closest("button");
-    await user.click(dashboardButton)
+    await user.click(dashboardButton);
     expect(dashboardButton).toHaveClass("selected");
 
-    const registerButton = screen.getByText("Cadastro de energia gerada").closest("button");
-    await user.click(registerButton)
+    const registerButton = screen
+      .getByText("Cadastro de energia gerada")
+      .closest("button");
+    await user.click(registerButton);
     expect(registerButton).toHaveClass("selected");
   });
 
   // Testa se a página é alterada para a default quando clica no logo
   it("should change page to default when click on logo", async () => {
     renderComponent();
-    const user = userEvent.setup()
+    const user = userEvent.setup();
 
     const logo = screen.getByAltText("Solar Energy logo");
-    await user.click(logo)
+    await user.click(logo);
 
     const dashboardButton = screen.getByText("Dashboard").closest("button");
     expect(dashboardButton).toHaveClass("selected");
+  });
+
+  it.skip("should call navigate when clicking on a button", async () => {
+    renderComponent();
+    const user = userEvent.setup();
+
+    const unitButton = screen.getByText("Unidades").closest("button");
+    await user.click(unitButton);
+
+    expect(navigateMock).toHaveBeenCalledWith("/unidades");
+
+    const dashboardButton = screen.getByText("Dashboard").closest("button");
+    await user.click(dashboardButton);
+
+    expect(navigateMock).toHaveBeenCalledWith("/");
+
+    const registerButton = screen
+      .getByText("Cadastro de energia gerada")
+      .closest("button");
+    await user.click(registerButton);
+
+    expect(navigateMock).toHaveBeenCalledWith("/cadastro");
   });
 });

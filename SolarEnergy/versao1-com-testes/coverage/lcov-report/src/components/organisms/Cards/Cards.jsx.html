@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">70.58% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/17</span>
+                <span class='fraction'>12/17</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>3/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">85.71% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>12/14</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -133,24 +133,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -176,10 +174,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -196,23 +196,23 @@ import { Card } from "../../index";
 &nbsp;
 import { getData } from "../../../utils"
 &nbsp;
-export default function <span class="fstat-no" title="function not covered" >Cards(</span>{ setFilter }) {
-  const [units, setUnits] = <span class="cstat-no" title="statement not covered" >useState([]);</span>
-  const [generation, setGeneration] = <span class="cstat-no" title="statement not covered" >useState([]);</span>
+export default function Cards({ setFilter }) {
+  const [units, setUnits] = useState([]);
+  const [generation, setGeneration] = useState([]);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  useEffect(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    getData("unidades", setUnits);</span>
-<span class="cstat-no" title="statement not covered" >    getData("geracoes", setGeneration);</span>
+  useEffect(() =&gt; {
+    getData("unidades", setUnits);
+    getData("geracoes", setGeneration);
   }, []);
 &nbsp;
-  const unitsTotal = <span class="cstat-no" title="statement not covered" >units?.length;</span>
-  const activeUnits = <span class="cstat-no" title="statement not covered" >units?.filter(<span class="fstat-no" title="function not covered" >(u</span>nit) =&gt; <span class="cstat-no" title="statement not covered" >unit.ativa)</span>.length;</span>
-  const inactiveUnits = <span class="cstat-no" title="statement not covered" >unitsTotal - activeUnits;</span>
+  const unitsTotal = units?.length;
+  const activeUnits = units?.filter(<span class="fstat-no" title="function not covered" >(u</span>nit) =&gt; <span class="cstat-no" title="statement not covered" >unit.ativa)</span>.length;
+  const inactiveUnits = unitsTotal - activeUnits;
 &nbsp;
   const generationMean =
-<span class="cstat-no" title="statement not covered" >    generation?.reduce(<span class="fstat-no" title="function not covered" >(a</span>cc, gen) =&gt; <span class="cstat-no" title="statement not covered" >acc + gen.total,</span> 0) / units?.length;</span>
+    generation?.reduce(<span class="fstat-no" title="function not covered" >(a</span>cc, gen) =&gt; <span class="cstat-no" title="statement not covered" >acc + gen.total,</span> 0) / units?.length;
 &nbsp;
-  const cards = <span class="cstat-no" title="statement not covered" >[</span>
+  const cards = [
     {
       id: "all",
       title: "Total de unidades",
@@ -240,10 +240,10 @@ export default function <span class="fstat-no" title="function not covered" >Car
     },
   ];
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;section style={{ display: "flex", justifyContent: "space-between" }}&gt;
-      {cards.map(<span class="fstat-no" title="function not covered" >(c</span>ard) =&gt; (
-<span class="cstat-no" title="statement not covered" >        &lt;Card</span>
+      {cards.map((card) =&gt; (
+        &lt;Card
           key={card.id}
           onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; {
 <span class="cstat-no" title="statement not covered" >            if (card.id === "mean") <span class="cstat-no" title="statement not covered" >return;</span></span>
@@ -262,7 +262,7 @@ export default function <span class="fstat-no" title="function not covered" >Car
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-07T19:29:23.964Z
+                at 2023-05-07T20:34:43.079Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
