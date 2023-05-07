@@ -2,7 +2,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from '@testing-library/user-event'
 import Navbar from "./Navbar";
-import {BrowserRouter, MemoryRouter} from 'react-router-dom'
+import {BrowserRouter} from 'react-router-dom'
 
 const renderComponent = () => {
   render(
