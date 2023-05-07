@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1683475190508" clover="3.2.0">
-  <project timestamp="1683475190508" name="All files">
+<coverage generated="1683475910256" clover="3.2.0">
+  <project timestamp="1683475910256" name="All files">
     <metrics statements="103" coveredstatements="51" conditionals="39" coveredconditionals="8" methods="42" coveredmethods="26" elements="184" coveredelements="85" complexity="0" loc="103" ncloc="103" packages="12" files="13" classes="13"/>
     <package name=".jest.mocks">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -45,17 +45,17 @@
       <metrics statements="11" coveredstatements="11" conditionals="2" coveredconditionals="2" methods="7" coveredmethods="7"/>
       <file name="Navbar.jsx" path="/home/ROSANA.REZENDE/senai/REACT/SolarEnergy/versao1-com-testes/src/components/molecules/Navbar/Navbar.jsx">
         <metrics statements="11" coveredstatements="11" conditionals="2" coveredconditionals="2" methods="7" coveredmethods="7"/>
+        <line num="9" count="8" type="stmt"/>
         <line num="10" count="8" type="stmt"/>
-        <line num="11" count="8" type="stmt"/>
-        <line num="13" count="8" type="stmt"/>
-        <line num="14" count="24" type="cond" truecount="2" falsecount="0"/>
-        <line num="17" count="8" type="stmt"/>
-        <line num="18" count="3" type="stmt"/>
-        <line num="21" count="8" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
-        <line num="38" count="1" type="stmt"/>
+        <line num="12" count="8" type="stmt"/>
+        <line num="13" count="24" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="8" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="20" count="8" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.components.organisms.Cards">
