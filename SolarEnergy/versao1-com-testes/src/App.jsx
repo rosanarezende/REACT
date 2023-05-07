@@ -1,9 +1,9 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { Dashboard, Units, GeneratedEnergyRegistration } from "./pages"
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
       <Routes>
         <Route path="/" element={<Dashboard />} />
 
@@ -12,7 +12,7 @@ function App() {
 
         <Route path="*" element={<h1>Rota não encontrada</h1>} />
       </Routes>
-    </BrowserRouter>
+    </>
   )
 }
 
