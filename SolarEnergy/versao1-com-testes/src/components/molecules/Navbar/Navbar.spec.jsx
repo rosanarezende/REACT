@@ -52,13 +52,15 @@ describe("Navbar", () => {
     expect(registerButton).toHaveClass("selected");
   });
 
-  // Testa se a página é alterada quando clica no logo
-  it("should change page when click on logo", async () => {
+  // Testa se a página é alterada para a default quando clica no logo
+  it("should change page to default when click on logo", async () => {
     renderComponent();
     const user = userEvent.setup()
 
     const logo = screen.getByAltText("Solar Energy logo");
     await user.click(logo)
-    expect(logo).toBeInTheDocument();
+
+    const dashboardButton = screen.getByText("Dashboard").closest("button");
+    expect(dashboardButton).toHaveClass("selected");
   });
 });
