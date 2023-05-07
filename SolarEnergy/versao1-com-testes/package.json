@@ -9,7 +9,9 @@
     "preview": "vite preview",
     "server": "json-server --watch  backend/db.json --port 3333 --no-cors",
     "start": "npm run server & npm run dev",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watchAll --verbose",
+    "test:coverage": "jest --silent --watchAll=false --coverage"
   },
   "dependencies": {
     "chart.js": "^4.3.0",
