@@ -1,4 +1,4 @@
-import { render, screen, act, waitFor } from "@testing-library/react";
+import { render, screen, act } from "@testing-library/react";
 import UnitList from "./UnitList";
 
 const setOpenForm = jest.fn();

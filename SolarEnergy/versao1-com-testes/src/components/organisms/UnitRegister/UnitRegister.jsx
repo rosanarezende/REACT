@@ -41,14 +41,13 @@ export default function UnitRegister({
     event.preventDefault();
 
     selectedUnit ? editUnit() : createUnit();
-
     setSelectedUnit(emptyState);
     setOpenForm(false);
   };
 
   return (
     <section className="unit-register">
-      <h2>Cadastro de Unidade Geradora</h2>
+      <h2>Cadastro de Unidade Gerada</h2>
       <form onSubmit={handleSave}>
         {["apelido", "local", "marca", "modelo"].map((campo) => (
           <div key={campo}>
