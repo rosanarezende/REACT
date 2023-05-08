@@ -1,4 +1,5 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
+import userEvent from '@testing-library/user-event'
 import App from "./App";
 
 describe("App", () => {
@@ -12,14 +13,15 @@ describe("App", () => {
     expect(reactLogo).toBeInTheDocument();
   });
 
-  it("should increment count on click", () => {
+  it("should increment count on click", async() => {
+    const user = userEvent.setup()
     render(<App />);
     const counter = screen.getByRole("button", {
       name: /Contador:/i,
     });
     expect(counter.textContent).toBe("Contador: 0");
 
-    fireEvent.click(counter);
+    await userEvent.click(counter);
     expect(counter.textContent).toBe("Contador: 1");
   });
 });
