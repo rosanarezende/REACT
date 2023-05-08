@@ -1,26 +1,26 @@
-import { render, screen, act } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import UnitList from "./UnitList";
 
 const setOpenForm = jest.fn();
 const setSelectedUnit = jest.fn();
 
-const renderComponent = async () => {
-  await act(async () => {
-    render(
-      <UnitList setOpenForm={setOpenForm} setSelectedUnit={setSelectedUnit} />
-    );
-  });
+const renderComponent = () => {
+  render(
+    <UnitList setOpenForm={setOpenForm} setSelectedUnit={setSelectedUnit} />
+  );
 };
 
 const testColumnPresence = (column) => {
-  column.forEach((column) => {
-    expect(screen.getByText(column)).toBeInTheDocument();
+  column.forEach(async (column) => {
+    await waitFor(() => {
+      expect(screen.getByText(column)).toBeInTheDocument();
+    });
   });
 };
 
 describe("UnitList", () => {
-  beforeEach(async () => {
-    await renderComponent();
+  beforeEach(() => {
+    renderComponent();
     setOpenForm.mockClear();
     setSelectedUnit.mockClear();
   });
@@ -30,7 +30,7 @@ describe("UnitList", () => {
   });
 
   test("should render UnitList component", async () => {
-    expect(screen.getByText("Lista de unidades")).toBeInTheDocument();
+      expect(screen.getByText("Lista de unidades")).toBeInTheDocument();
   });
 
   test("should render table with units", async () => {
@@ -64,14 +64,14 @@ describe("UnitList", () => {
 
   describe("Edit Unit Button", () => {
     test("should render button to edit unit", async () => {
-      const editButton = screen.getAllByText("Editar")[0];
+      const fistEditButton = await waitFor(() => screen.getAllByText("Editar"));
 
-      expect(editButton).toBeInTheDocument();
+      expect(fistEditButton[0]).toBeInTheDocument();
     });
 
     test("should call setSelectedUnit with unit data when click on button to edit unit", async () => {
-      const editButton = screen.getAllByText("Editar")[0];
-      editButton.click();
+      const fistEditButton = await waitFor(() => screen.getAllByText("Editar"));
+      fistEditButton[0].click();
 
       expect(setSelectedUnit).toHaveBeenCalledWith({
         id: 1,
@@ -84,8 +84,8 @@ describe("UnitList", () => {
     });
 
     test("should call setOpenForm when click on button to edit unit", async () => {
-      const editButton = screen.getAllByText("Editar")[0];
-      editButton.click();
+      const fistEditButton = await waitFor(() => screen.getAllByText("Editar"));
+      fistEditButton[0].click();
 
       expect(setOpenForm).toHaveBeenCalledWith(true);
     });
@@ -93,14 +93,14 @@ describe("UnitList", () => {
 
   describe("Delete Unit Button", () => {
     test("should render button to delete unit", async () => {
-      const deleteButton = screen.getAllByText("Remover")[0];
+      const deleteButtons = await waitFor(() => screen.getAllByText("Remover"));
 
-      expect(deleteButton).toBeInTheDocument();
+      expect(deleteButtons[0]).toBeInTheDocument();
     });
 
     test("should remove unit from table when click on button to delete unit", async () => {
-      const deleteButton = screen.getAllByText("Remover")[0];
-      deleteButton.click();
+      const deleteButtons = await waitFor(() => screen.getAllByText("Remover"));
+      deleteButtons[0].click();
 
       expect(fetch).toHaveBeenCalledWith("http://localhost:3333/unidades/1", {
         method: "DELETE",
