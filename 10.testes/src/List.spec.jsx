@@ -2,6 +2,12 @@ import { render, screen, waitFor, waitForElementToBeRemoved } from '@testing-lib
 import userEvent from '@testing-library/user-event';
 import List from "./List"
 
+let user
+const renderList = () => {
+  user = userEvent.setup()
+  render(<List />);
+}
+
 describe('List', () => {
   it('should render the list with the initial items', () => {
     render(<List />);
@@ -11,8 +17,7 @@ describe('List', () => {
   });
 
   it('should add a new item to the list', async () => {
-    const user = userEvent.setup()
-    render(<List />);
+    renderList()
 
     await user.type(screen.getByRole('textbox'), 'Item 3');
     await userEvent.click(screen.getByRole('button', { name: 'Add Item' }));
@@ -24,8 +29,7 @@ describe('List', () => {
   });
 
   it('should remove an item from the list', async () => {
-    const user = userEvent.setup()
-    render(<List />);
+    renderList()
 
     const removeButtons = screen.getAllByRole('button', { name: 'Delete' });
     await user.click(removeButtons[0]);
