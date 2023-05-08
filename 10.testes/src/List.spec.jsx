@@ -30,6 +30,7 @@ describe('List', () => {
     const removeButtons = screen.getAllByRole('button', { name: 'Delete' });
     await user.click(removeButtons[0]);
 
+    // como quero testar q não existe, uso o queryByText (o getByText daria erro)
     expect(screen.queryByText('Item 1')).not.toBeInTheDocument();
 
     // se usar, pode remover o await do userEvent.click
