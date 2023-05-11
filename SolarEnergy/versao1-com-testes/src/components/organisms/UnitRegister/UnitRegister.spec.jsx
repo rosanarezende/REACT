@@ -1,30 +1,29 @@
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import UnitRegister from "./UnitRegister";
 
 const setOpenForm = jest.fn();
 const setSelectedUnit = jest.fn();
 
-const emptyState = {
-  apelido: "",
-  local: "",
-  marca: "",
-  modelo: "",
-  ativa: false,
-};
+const renderComponent = (selectedUnit) =>
+  render(
+    <UnitRegister
+      setOpenForm={setOpenForm}
+      selectedUnit={selectedUnit}
+      setSelectedUnit={setSelectedUnit}
+    />
+  );
 
 describe("UnitRegister", () => {
   // independentemente de ter ou não uma selectedUnit
   describe("When render UnitRegister", () => {
     beforeEach(() => {
-      render(
-        <UnitRegister
-          setOpenForm={setOpenForm}
-          selectedUnit={undefined}
-          setSelectedUnit={setSelectedUnit}
-        />
-      );
-      setOpenForm.mockClear();
-      setSelectedUnit.mockClear();
+      renderComponent();
+    });
+
+    // Como temos testes que envolvem preencher campos, clicar em botões e etc, é necessário limpar o mock do jest para que não haja interferência entre os testes.
+    afterEach(() => {
+      jest.clearAllMocks();
     });
 
     // Testar se o componente UnitRegister é renderizado.
@@ -53,7 +52,7 @@ describe("UnitRegister", () => {
       expect(setOpenForm).toHaveBeenCalledWith(false);
     });
 
-    // Testar se ao preencher todos os campos e clicar no botão "Salvar", o método setSelectedUnit é chamado com o estado inicial = só dele funcionar se todos os campos estiverem preenchidos
+    // Testar se ao preencher todos os campos e clicar no botão "Salvar", o método setSelectedUnit é chamado com o estado inicial = só deve funcionar se todos os campos estiverem preenchidos
     test("should call setSelectedUnit with emptyState when click on button to save unit", async () => {
       const inputs = screen.getAllByRole("textbox");
       inputs.forEach((input) => (input.value = "teste"));
@@ -61,32 +60,32 @@ describe("UnitRegister", () => {
       const button = screen.getByText("Salvar");
       button.click();
 
+      const emptyState = {
+        apelido: "",
+        local: "",
+        marca: "",
+        modelo: "",
+        ativa: false,
+      };
       expect(setSelectedUnit).toHaveBeenCalledWith(emptyState);
     });
 
     // Testar se ao clicar na caixa de seleção "Ativo", o estado é alterado corretamente.
     test("should change ativa state when click on checkbox", async () => {
+      const user = userEvent.setup();
       const checkbox = screen.getByRole("checkbox");
 
-      checkbox.click();
+      await user.click(checkbox);
       expect(checkbox).toBeChecked();
 
-      checkbox.click();
+      await user.click(checkbox);
       expect(checkbox).not.toBeChecked();
     });
   });
 
   describe("When selectedUnit is undefined", () => {
     beforeEach(() => {
-      render(
-        <UnitRegister
-          setOpenForm={setOpenForm}
-          selectedUnit={undefined}
-          setSelectedUnit={setSelectedUnit}
-        />
-      );
-      setOpenForm.mockClear();
-      setSelectedUnit.mockClear();
+      renderComponent();
     });
 
     // Testar se ao renderizar o formulário, todos os campos estão vazios.
@@ -99,7 +98,7 @@ describe("UnitRegister", () => {
     });
 
     // Testar se ao preencher todos os campos e clicar no botão "Salvar", o método createUnit é chamado quando não há selectedUnit.
-    test("should create new unit when click on button to save unit and selectedUnit is undefined", async () => {
+    test("should create new unit when click on button to save unit and selectedUnit is undefined", () => {
       const inputs = screen.getAllByRole("textbox");
       inputs.forEach((input) => (input.value = "teste"));
 
@@ -124,20 +123,13 @@ describe("UnitRegister", () => {
       modelo: "Modelo 1",
       ativa: true,
     };
+
     beforeEach(() => {
-      render(
-        <UnitRegister
-          setOpenForm={setOpenForm}
-          selectedUnit={selectedUnit}
-          setSelectedUnit={setSelectedUnit}
-        />
-      );
-      setOpenForm.mockClear();
-      setSelectedUnit.mockClear();
+      renderComponent(selectedUnit);
     });
 
     // Testar se ao renderizar o formulário, os campos são preenchidos com os dados da unidade selecionada.
-    test("should render form with selectedUnit data", async () => {
+    test("should render form with selectedUnit data", () => {
       const inputs = screen.getAllByRole("textbox");
 
       inputs.forEach((input) => {
@@ -146,10 +138,7 @@ describe("UnitRegister", () => {
     });
 
     // Testar se ao preencher todos os campos e clicar no botão "Salvar", edita a unidade quando há selectedUnit.
-    test("should edit unit when click on button to save unit and selectedUnit is defined", async () => {
-      const inputs = screen.getAllByRole("textbox");
-      inputs[0].value = "teste";
-
+    test("should edit unit when click on button to save unit and selectedUnit is defined", () => {
       const button = screen.getByText("Salvar");
       button.click();
 
