@@ -9,27 +9,29 @@ const useNotes = () => {
     setNotes(notes);
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem('notes', JSON.stringify(notes));
-  }, [notes]);
-
   const selectNote = (id) => {
     const selectedNote = notes.find(note => note.id === id);
     setSelectedNote(selectedNote);
   };
+  
+  const updateContent = (newContent) => {
+    localStorage.setItem("cookBookList", JSON.stringify(newContent));
+    setNotes(newContent)
+  };
 
   const addNote = (note) => {
-    setNotes([...notes, note]);
+    const newList = [...notes, note]
+    updateContent(newList);
   };
 
   const updateNote = (id, updatedNote) => {
-    const updatedNotes = notes.map(note => (note.id === id ? updatedNote : note));
-    setNotes(updatedNotes);
+    const newList = notes.map(note => (note.id === id ? updatedNote : note));
+    updateContent(newList);
   };
 
   const deleteNote = (id) => {
-    const updatedNotes = notes.filter(note => note.id !== id);
-    setNotes(updatedNotes);
+    const newList = notes.filter(note => note.id !== id);
+    updateContent(newList);
   };
 
   return {
