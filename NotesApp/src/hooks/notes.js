@@ -15,7 +15,7 @@ const useNotes = () => {
   };
   
   const updateContent = (newContent) => {
-    localStorage.setItem("cookBookList", JSON.stringify(newContent));
+    localStorage.setItem("notes", JSON.stringify(newContent));
     setNotes(newContent)
   };
 
